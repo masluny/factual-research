@@ -1,0 +1,18 @@
+# design-scout brief. Fill the empty fields before research (ask the user or state assumptions).
+
+[brief]
+title = "Single-file HTML article template for factual-research verified research texts: long-f"
+summary = """
+Single-file HTML article template for factual-research verified research texts: long-form reading, citation chips revealing verbatim quotes, tables, references, verification badge, TOC, dark mode, print
+"""
+type = "editorial"          # landing | saas | ecommerce | dashboard | portfolio | editorial | docs | app | mobile-app
+stack = "html"        # react-tailwind | next | vanilla | vue | astro | svelte | unknown
+audience = ""            # who, in one sentence
+primary_action = ""      # the ONE thing a visitor should do
+brand_adjectives = []    # 3 words, e.g. ["calm", "precise", "warm"]
+constraints = []         # existing brand colors/fonts, WCAG level, performance budget, languages...
+competitors = []         # URLs of direct competitors (captured as references)
+language = "en"
+
+[research]
+topics = ["typography", "layout", "content", "accessibility", "dark-mode", "performance"]

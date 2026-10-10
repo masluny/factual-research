@@ -1,0 +1,22 @@
+{"studies": {
+ "martineau2017vitamin": {
+  "design": {"value": "IPD meta-analysis of RCTs", "quote": "In this individual participant data (IPD) meta-analysis of randomised controlled trials"},
+  "n": {"value": "10 933 participants", "quote": "IPD were obtained for 10 933 (96.6%) participants"},
+  "effect": {"value": "OR 0.88 (95% CI 0.81–0.96)", "quote": "adjusted odds ratio 0.88, 95% confidence interval 0.81 to 0.96", "loc": "abstract"},
+  "duration": {"value": "median 12 months", "quote": "participants were followed for a median of 12 months"},
+  "funding": {"value": "NIHR HTA programme", "quote": "This study was supported by a grant from the National Institute for Health Research (NIHR) under its Health Technology Assessment programme"}
+ },
+ "jolliffe2022test": {
+  "design": {"value": "Phase 3 open-label RCT (test-and-treat)", "quote": "Phase 3 open label randomised controlled trial"},
+  "population": {"value": "UK, aged ≥16 y, not taking vitamin D", "quote": "6200 people aged ≥16 years who were not taking vitamin D"},
+  "n": {"value": "6200", "quote": "phase 3 randomised controlled trial (6200 participants)"},
+  "intervention": {"value": "800 or 3200 IU/day for 6 months if 25(OH)D <75 nmol/L", "quote": "lower dose vitamin D (800 IU/day, n=1550) or higher dose vitamin D (3200 IU/day, n=1550) to those with blood 25(OH)D concentration <75 nmol/L"},
+  "comparator": {"value": "no offer of testing or supplementation", "quote": "compared with no offer of testing or supplementation (n=3100)"},
+  "effect": {"value": "OR 1.26 (95% CI 0.96–1.66) lower dose; OR 1.09 (0.82–1.46) higher dose", "quote": "odds ratio 1.26, 95% confidence interval 0.96 to 1.66) and 76/1515 (5.0%) in the higher dose group (1.09, 0.82 to 1.46)"},
+  "funding": {"value": "Barts Charity, Pharma Nord, DSM Nutritional Products and others", "quote": "This study was supported by Barts Charity (refs MGU0459 and MGU0466), Pharma Nord, the Fischer Family Foundation, DSM Nutritional Products"}
+ },
+ "bergman2013vitamin": {
+  "design": {"value": "Meta-analysis of RCTs", "quote": "Systematic Review and Meta-Analysis of Randomized Controlled Trials"},
+  "effect": {"value": "OR 0.64 (95% CI 0.49–0.84)", "quote": "OR 0.64; 95% CI 0.49-0.84"}
+ }
+}}

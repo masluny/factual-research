@@ -1,0 +1,56 @@
+# Economics, finance, business, public policy.
+name = "economics"
+title = "Economics, finance & policy"
+description = "Macro/micro economics, labour, finance, policy evaluation. Numbers cross-checked against official statistics."
+keywords = ["economy", "gospodar", "economic", "ekonom", "inflation", "inflacj", "gdp", "pkb", "unemployment",
+  "bezroboc", "wage", "wynagrodz", "płac", "interest rate", "stop procent", "monetary", "monetar", "fiscal", "fiskal",
+  "tax", "podat", "market", "rynek", "rynk", "finance", "finans", "stock", "akcj", "investment", "inwestyc", "trade",
+  "handel", "tariff", "cło", "policy", "polityk", "minimum wage", "płaca minimal", "housing", "mieszkan", "pension",
+  "emerytur", "productivity", "produktywn", "poverty", "ubóstw", "inequality", "nierówn"]
+openalex_fields = ["Economics, Econometrics and Finance", "Business, Management and Accounting", "Social Sciences",
+  "Decision Sciences"]
+connectors = ["openalex", "crossref", "worldbank"]
+optional_connectors = ["gus_bdl", "core", "semanticscholar"]
+per_query = 50
+since = 1995
+citation_style = "apa"
+question_frame = "population/market, policy/shock, outcome, identification strategy"
+
+[authorities]
+names = ["NBER", "IMF", "OECD", "World Bank", "ECB", "NBP", "Eurostat", "GUS", "BIS", "Federal Reserve"]
+
+[evidence]
+order = ["sr_ma", "journal_article", "dataset", "technical_report", "preprint", "book", "narrative_review", "other"]
+[evidence.weight]
+sr_ma = 0.9
+journal_article = 0.7
+dataset = 0.85
+technical_report = 0.55
+preprint = 0.45
+book = 0.5
+narrative_review = 0.45
+editorial = 0.05
+other = 0.2
+[evidence.grade_start]
+sr_ma = "high"
+journal_article = "moderate"
+dataset = "high"
+technical_report = "low"
+preprint = "low"
+# "working papers" (NBER, CEPR) come through as technical_report / preprint.
+
+[screening]
+auto_exclude_retracted = true
+
+[extraction]
+fields = [
+  { id = "setting", label = "Country / market / period" },
+  { id = "data", label = "Data" },
+  { id = "method", label = "Identification / method", hint = "DiD, RDD, IV, RCT, structural, descriptive" },
+  { id = "estimate", label = "Main estimate", hint = "coefficient/elasticity with SE or CI, exactly as reported" },
+  { id = "mechanism", label = "Mechanism" },
+  { id = "limitations", label = "Limitations / external validity" },
+]
+
+[causal]
+allowed = ["sr_ma", "journal_article", "dataset"]

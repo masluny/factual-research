@@ -1,0 +1,51 @@
+# Polish and EU law.
+name = "law_pl_eu"
+title = "Law (Poland & EU)"
+description = "Statutes (ISAP/ELI), Polish case law (SAOS), EU law and doctrine."
+keywords = ["ustaw", "kodeks", "prawo", "prawa", "przepis", "rozporządzen", "dyrektyw", "sąd", "wyrok", "orzecz",
+  "uchwał", "trybunał", "art.", "artykuł", "konsument", "umow", "odpowiedzialnoś", "rodo", "gdpr", "law", "statute",
+  "court", "judgment", "regulation", "directive", "legal", "liability", "contract", "eu law", "tsue", "cjeu",
+  "abuzyw", "klauzul", "niedozwolon", "postanowien", "nieważnoś", "roszczen", "pozew", "pozwan", "kasacj",
+  "apelacj", "rękojm", "najm", "spadk", "frankow", "kodeks cywil", "k.c.", "k.p.", "rodo", "odszkodow"]
+openalex_fields = ["Social Sciences", "Business, Management and Accounting"]
+connectors = ["sejm_eli", "saos", "openalex", "crossref"]
+optional_connectors = []
+per_query = 30
+since = 1990
+citation_style = "apa"
+question_frame = "legal issue, governing provisions, case law, doctrine"
+
+[authorities]
+names = ["Dziennik Ustaw (ISAP)", "Sąd Najwyższy", "Trybunał Konstytucyjny", "NSA", "TSUE / CJEU", "EUR-Lex", "UODO", "UOKiK"]
+
+[evidence]
+order = ["legislation", "judgment", "journal_article", "book", "narrative_review", "thesis", "other"]
+[evidence.weight]
+legislation = 1.0
+judgment = 0.85
+journal_article = 0.5
+book = 0.55
+narrative_review = 0.4
+thesis = 0.25
+editorial = 0.1
+other = 0.2
+[evidence.grade_start]
+legislation = "high"
+judgment = "high"
+journal_article = "moderate"
+book = "moderate"
+
+[screening]
+auto_exclude_retracted = true
+
+[extraction]
+fields = [
+  { id = "source", label = "Act / court" },
+  { id = "provision", label = "Provision / signature", hint = "e.g. art. 385(1) k.c.; III CZP 15/21" },
+  { id = "date", label = "Date / version in force" },
+  { id = "holding", label = "Rule / holding", hint = "quote the operative wording" },
+  { id = "status", label = "Status", hint = "obowiązujący / uchylony / prawomocny" },
+]
+
+[causal]
+allowed = ["legislation", "judgment"]

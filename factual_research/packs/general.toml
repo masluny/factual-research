@@ -1,0 +1,62 @@
+# Fallback for any field: broad scholarly indexes.
+name = "general"
+title = "General scholarly (fallback)"
+description = "Any discipline: OpenAlex, Crossref and Semantic Scholar with venue-quality signals."
+keywords = []
+openalex_fields = []
+connectors = ["openalex", "crossref", "europepmc"]
+optional_connectors = ["semanticscholar", "core"]
+per_query = 50
+since = 1990
+citation_style = "apa"
+question_frame = "concept, relation, context"
+
+[authorities]
+names = []
+
+[evidence]
+order = ["guideline", "sr_ma", "rct", "journal_article", "conference_paper", "book", "technical_report", "dataset",
+  "narrative_review", "preprint", "thesis", "other"]
+[evidence.weight]
+guideline = 0.95
+sr_ma = 0.95
+rct = 0.85
+cohort = 0.5
+observational = 0.4
+journal_article = 0.6
+conference_paper = 0.5
+book = 0.5
+technical_report = 0.45
+dataset = 0.7
+narrative_review = 0.4
+preprint = 0.3
+thesis = 0.3
+legislation = 1.0
+judgment = 0.85
+standard = 1.0
+editorial = 0.05
+other = 0.15
+[evidence.grade_start]
+guideline = "high"
+sr_ma = "high"
+rct = "high"
+journal_article = "moderate"
+dataset = "moderate"
+standard = "high"
+legislation = "high"
+preprint = "low"
+
+[screening]
+auto_exclude_retracted = true
+
+[extraction]
+fields = [
+  { id = "design", label = "Design / type" },
+  { id = "context", label = "Context / sample" },
+  { id = "method", label = "Method" },
+  { id = "result", label = "Key result" },
+  { id = "limitations", label = "Limitations" },
+]
+
+[causal]
+allowed = ["guideline", "sr_ma", "rct", "standard", "legislation"]

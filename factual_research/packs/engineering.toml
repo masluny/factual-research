@@ -1,0 +1,67 @@
+# Mechanical, civil, electrical, materials and aerospace engineering.
+name = "engineering"
+title = "Engineering & materials"
+description = "Materials, structures, energy systems, manufacturing, electronics, aerospace."
+keywords = ["engineering", "inżynier", "material", "materiał", "fatigue", "zmęcz", "stress", "naprężen", "strength",
+  "wytrzymał", "composite", "kompozyt", "steel", "stal", "concrete", "beton", "alloy", "stopy metal", "weld", "spaw",
+  "turbine", "turbin", "battery", "bateri", "akumulator", "solar", "fotowolt", "circuit", "obwód", "sensor",
+  "czujnik", "manufactur", "produkc", "additive", "druk 3d", "3d print", "thermal", "termicz", "aerospace",
+  "lotnic", "structural", "konstrukc", "hydrogen", "wodór", "motor", "silnik", "corrosion", "korozj", "bridge",
+  "mosty", "power grid", "sieć energet", "control system", "sterowan", "vibration", "drgan"]
+openalex_fields = ["Engineering", "Materials Science", "Energy", "Chemical Engineering", "Physics and Astronomy"]
+connectors = ["openalex", "crossref", "ntrs", "arxiv"]
+optional_connectors = ["ieee", "core", "semanticscholar"]
+per_query = 50
+since = 2000
+citation_style = "ieee"
+question_frame = "system / material, condition, metric, method"
+
+[authorities]
+names = ["ISO", "IEC", "IEEE", "ASTM", "ASME", "CEN (EN standards)", "NIST", "NASA", "ESA", "DNV", "Eurocode"]
+
+[evidence]
+order = ["standard", "sr_ma", "journal_article", "technical_report", "conference_paper", "book", "thesis",
+  "preprint", "narrative_review", "dataset", "other"]
+[evidence.weight]
+standard = 1.0
+sr_ma = 0.85
+journal_article = 0.7
+technical_report = 0.6
+conference_paper = 0.55
+book = 0.5
+thesis = 0.35
+preprint = 0.3
+narrative_review = 0.45
+dataset = 0.6
+editorial = 0.05
+other = 0.2
+[evidence.grade_start]
+standard = "high"
+sr_ma = "high"
+journal_article = "moderate"
+technical_report = "moderate"
+conference_paper = "low"
+book = "moderate"
+thesis = "low"
+preprint = "low"
+narrative_review = "low"
+dataset = "moderate"
+
+[screening]
+auto_exclude_retracted = true
+auto_exclude_designs = []
+
+[extraction]
+fields = [
+  { id = "system", label = "System / material", hint = "e.g. CFRP laminate [0/90]s, S355 steel" },
+  { id = "method", label = "Method", hint = "experiment, FEA, analytical model, field data" },
+  { id = "conditions", label = "Conditions", hint = "load, temperature, environment, standard used (ASTM/ISO no.)" },
+  { id = "sample", label = "Specimens / n" },
+  { id = "metric", label = "Metric" },
+  { id = "result", label = "Result", hint = "copy numbers with units exactly" },
+  { id = "baseline", label = "Baseline / comparison" },
+  { id = "limitations", label = "Limitations" },
+]
+
+[causal]
+allowed = ["standard", "sr_ma", "journal_article", "technical_report"]

@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "factual-research"
+version = "0.4.0"
+description = "Domain-aware research CLI: searches the sources each field trusts, then verifies every citation, quote and number in your draft."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = []
+
+keywords = ["research", "citations", "literature-review", "systematic-review", "llm", "ai-agents", "pubmed", "fact-checking"]
+
+[project.urls]
+Homepage = "https://github.com/masluny/factual-research"
+Issues = "https://github.com/masluny/factual-research/issues"
+
+[project.optional-dependencies]
+pdf = ["pymupdf>=1.24"]
+docx = ["python-docx>=1.1"]
+xlsx = ["openpyxl>=3.1"]
+semantic = ["sentence-transformers>=3"]
+all = ["pymupdf>=1.24", "python-docx>=1.1", "openpyxl>=3.1"]
+
+[project.scripts]
+factual-research = "factual_research.cli:main"
+
+[tool.setuptools]
+packages = ["factual_research", "factual_research.connectors"]
+
+[tool.setuptools.package-data]
+factual_research = ["packs/*.toml", "skill/*.md", "templates/*.html"]

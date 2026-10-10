@@ -1,0 +1,54 @@
+# Chemistry, biochemistry, pharmacology of compounds.
+name = "chemistry"
+title = "Chemistry & compounds"
+description = "Compounds, reactions, properties, toxicology. PubChem is used for substance facts."
+keywords = ["compound", "związek", "molecule", "cząsteczk", "reaction", "reakcj", "synthesis", "synteza", "catalyst",
+  "katalizator", "polymer", "polimer", "solubility", "rozpuszcz", "toxicity", "toksyczn", "molecular", "molekular",
+  "chemical", "chemicz", "enzyme", "enzym", "oxidation", "utlenian", "pka", "ph ", "spectroscop", "spektroskop",
+  "chromatograph", "chromatograf", "electrolyte", "elektrolit"]
+openalex_fields = ["Chemistry", "Chemical Engineering", "Pharmacology, Toxicology and Pharmaceutics", "Materials Science"]
+connectors = ["pubchem", "europepmc", "openalex", "crossref"]
+optional_connectors = ["pubmed", "semanticscholar"]
+per_query = 50
+since = 1995
+citation_style = "acs"
+question_frame = "substance, property/reaction, conditions"
+
+[authorities]
+names = ["IUPAC", "PubChem", "ECHA", "NIST Chemistry WebBook", "CAS"]
+
+[evidence]
+order = ["sr_ma", "journal_article", "dataset", "narrative_review", "conference_paper", "preprint", "book", "other"]
+[evidence.weight]
+sr_ma = 0.85
+journal_article = 0.7
+dataset = 0.8
+narrative_review = 0.5
+conference_paper = 0.45
+preprint = 0.3
+book = 0.55
+in_vitro = 0.5
+animal = 0.4
+editorial = 0.05
+other = 0.2
+[evidence.grade_start]
+sr_ma = "high"
+journal_article = "moderate"
+dataset = "high"
+narrative_review = "low"
+preprint = "low"
+
+[screening]
+auto_exclude_retracted = true
+
+[extraction]
+fields = [
+  { id = "substance", label = "Substance / system" },
+  { id = "method", label = "Method" },
+  { id = "conditions", label = "Conditions (T, p, solvent)" },
+  { id = "result", label = "Result", hint = "value + units exactly as reported" },
+  { id = "limitations", label = "Limitations" },
+]
+
+[causal]
+allowed = ["sr_ma", "journal_article", "dataset"]

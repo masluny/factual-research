@@ -1,0 +1,86 @@
+# Medicine, nutrition, supplements, public health.
+name = "medicine"
+title = "Medicine, nutrition & supplements"
+description = "Clinical and nutritional questions: drugs, vitamins, supplements, diet, disease risk."
+keywords = ["vitamin", "witamin", "supplement", "suplement", "dose", "dawk", "disease", "chorob", "patient", "pacjent",
+  "clinical", "klinicz", "therapy", "terapi", "treatment", "leczen", "risk", "ryzyk", "mortality", "śmiertel",
+  "infection", "infekc", "diet", "nutrition", "żywien", "cancer", "nowotw", "drug", "leków", "lekar", "symptom",
+  "objaw", "health", "zdrow", "deficiency", "niedob", "omega", "probiotic", "probiotyk", "magnesium", "magnez",
+  "iron", "żelaz", "zinc", "cynk", "blood", "krew", "vaccine", "szczepi", "pregnan", "ciąż", "sleep", "insomnia", "bezsenn",
+  "creatine", "kreatyn", "caffeine", "kofein", "cholesterol", "diabetes", "cukrzyc", "obesity", "otyło"]
+openalex_fields = ["Medicine", "Nursing", "Health Professions", "Pharmacology, Toxicology and Pharmaceutics",
+  "Immunology and Microbiology", "Biochemistry, Genetics and Molecular Biology", "Dentistry", "Neuroscience"]
+connectors = ["pubmed", "europepmc", "openalex", "clinicaltrials", "crossref"]
+optional_connectors = ["semanticscholar"]
+per_query = 60
+since = 2005
+citation_style = "vancouver"
+question_frame = "PICO"   # Population, Intervention/exposure, Comparator, Outcome
+
+[authorities]
+# Bodies whose syntheses outrank single studies; search their names explicitly when relevant.
+names = ["Cochrane", "WHO", "EFSA", "NIH Office of Dietary Supplements", "NICE", "USPSTF", "CDC", "ECDC",
+  "Endocrine Society", "ESPEN", "AHA", "ESC"]
+
+[evidence]
+# weight 0..1 used for consensus; grade_start = GRADE starting certainty
+order = ["guideline", "sr_ma", "rct", "clinical_trial", "cohort", "case_control", "cross_sectional", "observational",
+  "narrative_review", "case_report", "animal", "in_vitro", "trial_registration", "preprint", "editorial"]
+[evidence.weight]
+guideline = 0.95
+sr_ma = 1.0
+rct = 0.85
+clinical_trial = 0.55
+cohort = 0.5
+case_control = 0.4
+cross_sectional = 0.3
+observational = 0.4
+narrative_review = 0.25
+case_report = 0.12
+animal = 0.08
+in_vitro = 0.05
+trial_registration = 0.05
+preprint = 0.3
+editorial = 0.05
+journal_article = 0.35
+other = 0.1
+[evidence.grade_start]
+guideline = "high"
+sr_ma = "high"
+rct = "high"
+clinical_trial = "low"
+cohort = "low"
+case_control = "low"
+cross_sectional = "low"
+observational = "low"
+narrative_review = "very low"
+case_report = "very low"
+animal = "very low"
+in_vitro = "very low"
+preprint = "low"
+journal_article = "low"
+
+[screening]
+auto_exclude_retracted = true
+auto_exclude_designs = []          # e.g. ["editorial"]
+require_abstract = false
+human_only_hint = true             # flag animal / in vitro studies for human questions
+
+[extraction]
+# Columns for the evidence table the agent fills (value + verbatim quote + page per cell).
+fields = [
+  { id = "design", label = "Design", hint = "e.g. double-blind RCT, prospective cohort, SR/MA of 12 RCTs" },
+  { id = "population", label = "Population", hint = "who, age, setting, baseline status (e.g. vitamin D deficient)" },
+  { id = "n", label = "N", hint = "participants analysed (or studies/participants for a meta-analysis)" },
+  { id = "intervention", label = "Intervention / exposure", hint = "dose, form, frequency" },
+  { id = "comparator", label = "Comparator", hint = "placebo, usual care, low vs high exposure" },
+  { id = "duration", label = "Duration / follow-up" },
+  { id = "outcome", label = "Primary outcome" },
+  { id = "effect", label = "Effect (95% CI)", hint = "copy the effect estimate exactly, e.g. OR 0.88 (95% CI 0.81–0.96)" },
+  { id = "safety", label = "Adverse events" },
+  { id = "funding", label = "Funding / COI" },
+]
+
+[causal]
+# Study designs that may support causal wording ("reduces", "prevents", "zapobiega").
+allowed = ["rct", "sr_ma", "guideline"]

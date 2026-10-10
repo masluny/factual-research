@@ -1,0 +1,73 @@
+[
+ {
+  "claim": "C1",
+  "key": "martineau2017vitamin",
+  "stance": "for",
+  "loc": "abstract",
+  "quote": "Vitamin D supplementation reduced the risk of acute respiratory tract infection among all participants (adjusted odds ratio 0.88, 95% confidence interval 0.81 to 0.96",
+  "effect": "OR 0.88 (95% CI 0.81–0.96)"
+ },
+ {
+  "claim": "C1",
+  "key": "bergman2013vitamin",
+  "stance": "for",
+  "quote": "Results indicate that vitamin D has a protective effect against RTI, and dosing once-daily seems most effective"
+ },
+ {
+  "claim": "C1",
+  "key": "jolliffe2022test",
+  "stance": "against",
+  "quote": "This was not, however, associated with protection against all cause acute respiratory tract infection or covid-19"
+ },
+ {
+  "claim": "C1",
+  "key": "camargo2024daily",
+  "stance": "against",
+  "quote": "recent trials, in different populations and using different regimens, have yielded null results"
+ },
+ {
+  "claim": "C1",
+  "key": "ginde2016high",
+  "stance": "for",
+  "quote": "Monthly high-dose vitamin D 3 supplementation reduced the incidence of ARI in older long-term care residents"
+ },
+ {
+  "claim": "C2",
+  "key": "martineau2017vitamin",
+  "stance": "for",
+  "loc": "sec. Results",
+  "quote": "No such protective effect was seen among participants in trials where at least one bolus dose of vitamin D was administered (adjusted odds ratio 0.97, 0.86 to 1.10",
+  "effect": "OR 0.97 (0.86–1.10) bolus vs OR 0.81 (0.72–0.91) daily/weekly"
+ },
+ {
+  "claim": "C2",
+  "key": "bergman2013vitamin",
+  "stance": "for",
+  "quote": "The protective effect was larger in studies using once-daily dosing compared to bolus doses (OR = 0.51 vs OR = 0.86, p = 0.01)"
+ },
+ {
+  "claim": "C3",
+  "key": "jolliffe2022test",
+  "stance": "for",
+  "quote": "was not, however, associated with protection against all cause acute respiratory tract infection or covid-19"
+ },
+ {
+  "claim": "C3",
+  "key": "wallgremstrup2024high",
+  "stance": "for",
+  "quote": "High-dose vitamin D 3 supplementation shows no beneficial effects on white blood cell counts, acute phase reactants, or frequency of respiratory infections"
+ },
+ {
+  "claim": "C1",
+  "key": "jolliffe2025vitamin",
+  "stance": "mixed",
+  "quote": "the intervention did not significantly affect overall ARI risk (OR 0.94, 95% CI 0.88 to 1.00, P=0.057; 40 studies",
+  "effect": "OR 0.94 (95% CI 0.88–1.00)"
+ },
+ {
+  "claim": "C2",
+  "key": "jolliffe2025vitamin",
+  "stance": "against",
+  "quote": "Pre-specified subgroup analysis did not reveal evidence of effect modification by age, baseline vitamin D status, or dosing regimen"
+ }
+]

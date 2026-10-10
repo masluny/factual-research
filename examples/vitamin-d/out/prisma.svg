@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 683" class="prisma" role="img" aria-label="PRISMA flow diagram">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="ah"/></marker></defs>
+<rect x="20" y="40" width="400" height="135" rx="8" class="b"/>
+<text x="32" y="62" class="bt">Records from databases (n = 412)</text>
+<text x="32" y="82" class="bl">pubmed: 160</text>
+<text x="32" y="99" class="bl">europepmc: 80</text>
+<text x="32" y="116" class="bl">crossref: 80</text>
+<text x="32" y="133" class="bl">openalex: 80</text>
+<text x="32" y="150" class="bl">clinicaltrials: 12</text>
+<rect x="450" y="40" width="390" height="135" rx="8" class="b2"/>
+<text x="462" y="62" class="bt">Other sources (n = 133)</text>
+<text x="462" y="82" class="bl">snowball: 10</text>
+<text x="462" y="99" class="bl">watch: 123</text>
+<line x1="220" y1="175" x2="220" y2="205" class="ar" marker-end="url(#ah)"/>
+<rect x="20" y="205" width="400" height="58" rx="8" class="b"/>
+<text x="32" y="227" class="bt">After duplicates removed (n = 401)</text>
+<text x="32" y="247" class="bl">duplicates removed: 144</text>
+<line x1="220" y1="263" x2="220" y2="293" class="ar" marker-end="url(#ah)"/>
+<rect x="20" y="293" width="400" height="160" rx="8" class="b"/>
+<text x="32" y="315" class="bt">Records screened (n = 401)</text>
+<text x="32" y="335" class="bl">awaiting screening: 361</text>
+<rect x="450" y="293" width="390" height="160" rx="8" class="x"/>
+<text x="462" y="315" class="bt">Excluded (n = 24)</text>
+<text x="462" y="335" class="bl">automatic rules: 9</text>
+<text x="462" y="352" class="bl">title/abstract: 15</text>
+<text x="462" y="369" class="bl">[auto] not a research item: 5</text>
+<text x="462" y="386" class="bl">wrong intervention: 5</text>
+<text x="462" y="403" class="bl">wrong outcome: 4</text>
+<text x="462" y="420" class="bl">[auto] retracted: 2</text>
+<line x1="420" y1="323" x2="450" y2="323" class="ar" marker-end="url(#ah)"/>
+<line x1="220" y1="453" x2="220" y2="483" class="ar" marker-end="url(#ah)"/>
+<rect x="20" y="483" width="400" height="75" rx="8" class="b"/>
+<text x="32" y="505" class="bt">Reports sought (n = 16)</text>
+<text x="32" y="525" class="bl">full text retrieved: 9</text>
+<text x="32" y="542" class="bl">abstract only: 7</text>
+<rect x="450" y="483" width="390" height="75" rx="8" class="x"/>
+<text x="462" y="505" class="bt">Excluded after full text (n = 0)</text>
+<text x="462" y="525" class="bl">none</text>
+<line x1="420" y1="513" x2="450" y2="513" class="ar" marker-end="url(#ah)"/>
+<line x1="220" y1="558" x2="220" y2="588" class="ar" marker-end="url(#ah)"/>
+<rect x="20" y="588" width="400" height="75" rx="8" class="inc"/>
+<text x="32" y="610" class="bt">Included (n = 16)</text>
+<text x="32" y="630" class="bl">verified against full text: 9</text>
+<text x="20" y="22" class="ph">Identification → Screening → Included</text>
+</svg>

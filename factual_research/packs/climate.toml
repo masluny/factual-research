@@ -1,0 +1,54 @@
+# Climate, environment and earth sciences.
+name = "climate"
+title = "Climate, environment & earth science"
+description = "Climate change, emissions, ecology, environmental impacts, energy transition."
+keywords = ["climate", "klimat", "emission", "emisj", "carbon", "węgl", "co2", "warming", "ocieplen", "temperature",
+  "temperatur", "biodiversity", "bioróżnorod", "ecosystem", "ekosystem", "pollution", "zanieczyszcz", "smog",
+  "air quality", "jakość powietrza", "sea level", "poziom morza", "drought", "susz", "renewable", "odnawial",
+  "deforestation", "wylesian", "ocean", "glacier", "lodowc", "methane", "metan", "environment", "środowisk"]
+openalex_fields = ["Environmental Science", "Earth and Planetary Sciences", "Agricultural and Biological Sciences", "Energy"]
+connectors = ["openalex", "crossref", "ntrs"]
+optional_connectors = ["core", "semanticscholar"]
+per_query = 50
+since = 2000
+citation_style = "apa"
+question_frame = "system/region, driver, impact, scenario/time horizon"
+
+[authorities]
+names = ["IPCC", "WMO", "Copernicus (C3S, CAMS)", "NOAA", "NASA GISS", "EEA", "IEA", "UNEP"]
+
+[evidence]
+order = ["guideline", "sr_ma", "journal_article", "dataset", "technical_report", "preprint", "narrative_review", "other"]
+[evidence.weight]
+guideline = 1.0          # e.g. IPCC assessment reports
+sr_ma = 0.9
+journal_article = 0.7
+dataset = 0.85
+technical_report = 0.6
+preprint = 0.35
+narrative_review = 0.5
+editorial = 0.05
+other = 0.2
+[evidence.grade_start]
+guideline = "high"
+sr_ma = "high"
+journal_article = "moderate"
+dataset = "high"
+technical_report = "moderate"
+preprint = "low"
+
+[screening]
+auto_exclude_retracted = true
+
+[extraction]
+fields = [
+  { id = "region", label = "Region / system" },
+  { id = "period", label = "Period / scenario" },
+  { id = "data", label = "Data / model" },
+  { id = "result", label = "Result", hint = "number with units and uncertainty range" },
+  { id = "confidence", label = "Stated confidence / likelihood" },
+  { id = "limitations", label = "Limitations" },
+]
+
+[causal]
+allowed = ["guideline", "sr_ma", "journal_article"]

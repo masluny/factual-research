@@ -1,0 +1,55 @@
+# Physics, astronomy, astrophysics, high-energy physics.
+name = "physics"
+title = "Physics & astronomy"
+description = "Particle, condensed matter, quantum, astro and cosmology."
+keywords = ["quantum", "kwant", "particle", "cząstk", "dark matter", "ciemna materia", "galaxy", "galakty", "star",
+  "gwiazd", "cosmolog", "kosmolog", "black hole", "czarna dziura", "neutrino", "higgs", "lhc", "superconduct",
+  "nadprzewod", "laser", "photon", "foton", "gravitation", "grawitac", "exoplanet", "egzoplanet", "telescope",
+  "teleskop", "plasma", "plazm", "condensed matter", "spin", "relativ", "relatywist"]
+openalex_fields = ["Physics and Astronomy", "Earth and Planetary Sciences"]
+connectors = ["inspire", "arxiv", "openalex", "crossref"]
+optional_connectors = ["nasa_ads"]
+per_query = 50
+since = 1990
+citation_style = "ieee"
+question_frame = "phenomenon, measurement/model, observable"
+
+[authorities]
+names = ["Particle Data Group (PDG)", "CODATA", "CERN", "ESA", "NASA", "IAU"]
+
+[evidence]
+order = ["sr_ma", "journal_article", "conference_paper", "preprint", "technical_report", "book", "thesis", "other"]
+[evidence.weight]
+sr_ma = 0.9
+journal_article = 0.75
+conference_paper = 0.5
+preprint = 0.45
+technical_report = 0.5
+book = 0.55
+thesis = 0.35
+narrative_review = 0.6
+dataset = 0.7
+editorial = 0.05
+other = 0.2
+[evidence.grade_start]
+sr_ma = "high"
+journal_article = "moderate"
+preprint = "low"
+narrative_review = "moderate"
+dataset = "moderate"
+
+[screening]
+auto_exclude_retracted = true
+
+[extraction]
+fields = [
+  { id = "observable", label = "Observable / quantity" },
+  { id = "method", label = "Experiment / model" },
+  { id = "data", label = "Data / facility" },
+  { id = "result", label = "Result (± uncertainty)", hint = "copy value with uncertainty and units" },
+  { id = "significance", label = "Significance (σ / CL)" },
+  { id = "limitations", label = "Systematics / limitations" },
+]
+
+[causal]
+allowed = ["sr_ma", "journal_article"]

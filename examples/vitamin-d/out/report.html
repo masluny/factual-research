@@ -1,0 +1,253 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Research report</title><style>
+:root{--bg:#f7f7f5;--panel:#ffffff;--ink:#1d1f23;--muted:#666b73;--line:#e3e3df;--acc:#2f6fdf;--ok:#1f8a4c;
+--warn:#b86e00;--bad:#c62f2f;--chip:#eef2fb;--mark:#fff3c4;--prisma:#f2f5fb;--x:#fbf0ee;--inc:#eaf6ee}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#16181c;--panel:#1e2126;--ink:#e7e8ea;--muted:#9aa0a8;
+--line:#30343b;--acc:#7aa7ff;--ok:#4cc27e;--warn:#f0a83a;--bad:#ff6b6b;--chip:#26304a;--mark:#4a4320;--prisma:#222a38;--x:#3a2624;--inc:#1f3427}}
+:root[data-theme=dark]{--bg:#16181c;--panel:#1e2126;--ink:#e7e8ea;--muted:#9aa0a8;--line:#30343b;--acc:#7aa7ff;--ok:#4cc27e;
+--warn:#f0a83a;--bad:#ff6b6b;--chip:#26304a;--mark:#4a4320;--prisma:#222a38;--x:#3a2624;--inc:#1f3427}
+*{box-sizing:border-box}a{color:var(--acc)}td.study a{text-decoration:none;font-weight:600}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif}
+header{padding:28px 24px 8px;max-width:1180px;margin:auto}h1{font-size:24px;margin:0 0 6px;line-height:1.3}
+.sub{color:var(--muted);font-size:13px}main{max-width:1180px;margin:auto;padding:0 24px 60px}
+nav{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
+nav div{max-width:1180px;margin:auto;padding:8px 24px;display:flex;gap:14px;flex-wrap:wrap;font-size:13px}
+nav a{color:var(--muted);text-decoration:none}nav a:hover{color:var(--acc)}
+section{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:18px 0}
+h2{font-size:17px;margin:0 0 12px}h3{font-size:15px;margin:16px 0 8px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:14px 0}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.tile b{display:block;font-size:22px}.tile span{color:var(--muted);font-size:12px}
+.scroll{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+th{font-weight:600;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.02em}
+td.bad{background:color-mix(in srgb,var(--bad) 12%,transparent)}td .q{color:var(--acc);margin-left:4px;font-size:11px}
+td[title]:not([title=""]){cursor:help}.warn{color:var(--warn)}.note{color:var(--muted);font-size:12px;margin:6px 0 0}
+figure{margin:0}figcaption{font-weight:600;margin-bottom:8px}
+.badge{display:inline-block;padding:1px 8px;border-radius:99px;font-size:11px;font-weight:600;border:1px solid var(--line)}
+.c-high{background:color-mix(in srgb,var(--ok) 20%,transparent)}.c-moderate{background:color-mix(in srgb,var(--acc) 18%,transparent)}
+.c-low{background:color-mix(in srgb,var(--warn) 20%,transparent)}.c-verylow{background:color-mix(in srgb,var(--bad) 18%,transparent)}
+.bar{height:8px;border-radius:5px;background:color-mix(in srgb,var(--bad) 45%,transparent);overflow:hidden;min-width:120px}
+.bar i{display:block;height:100%;background:var(--ok)}
+.claim{border-top:1px solid var(--line);padding:12px 0}.claim:first-of-type{border-top:0}
+.claim .t{font-weight:600}.claim .meta{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:6px 0;font-size:13px;color:var(--muted)}
+.ev{font-size:13px;margin:4px 0 4px 10px;padding-left:10px;border-left:3px solid var(--line)}
+.ev.for{border-color:var(--ok)}.ev.against{border-color:var(--bad)}.ev.mixed{border-color:var(--warn)}
+.ev q{font-style:italic}.cite{background:var(--chip);border-radius:5px;padding:0 5px;font-size:12.5px;white-space:nowrap;
+text-decoration:none;color:var(--ink);cursor:help}
+.draft{max-width:760px}.draft p,.draft li{margin:8px 0}.issue-line{background:var(--mark);border-radius:4px}
+.iss{font-size:13px;margin:6px 0;padding:8px 10px;border-radius:8px;border:1px solid var(--line)}
+.iss.error{border-left:4px solid var(--bad)}.iss.warn{border-left:4px solid var(--warn)}.iss.note{border-left:4px solid var(--muted)}
+.iss .fx{color:var(--muted);margin-top:3px}.score{font-size:30px;font-weight:700}
+.flag{display:inline-block;font-size:11px;padding:0 6px;border-radius:5px;margin:1px 2px;background:color-mix(in srgb,var(--warn) 18%,transparent)}
+.flag.r{background:color-mix(in srgb,var(--bad) 25%,transparent)}
+svg.prisma{width:100%;max-width:860px}svg .b{fill:var(--prisma);stroke:var(--line)}svg .b2{fill:var(--panel);stroke:var(--line)}
+svg .x{fill:var(--x);stroke:var(--line)}svg .inc{fill:var(--inc);stroke:var(--line)}svg .bt{font-weight:600;font-size:14px;fill:var(--ink)}
+svg .bl{font-size:12.5px;fill:var(--muted)}svg .ar{stroke:var(--muted);stroke-width:1.5}svg .ah{fill:var(--muted)}svg .ph{font-size:12px;fill:var(--muted)}
+svg.forest{width:100%;max-width:760px}.fp-title{font-weight:600;font-size:13px;fill:var(--ink)}.fp-lab,.fp-val{font-size:12px;fill:var(--ink)}
+.fp-tick{font-size:11px;fill:var(--muted)}.fp-null{stroke:var(--muted);stroke-dasharray:4 3}.fp-ci{stroke:var(--acc);stroke-width:2}.fp-pt{fill:var(--acc)}
+details summary{cursor:pointer;color:var(--muted);font-size:13px}code{font-size:12px}
+.themebtn{float:right;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:8px;padding:4px 10px;cursor:pointer}
+@media (max-width:640px){header,main{padding-left:16px;padding-right:16px}nav div{padding:8px 16px}section{padding:14px}}
+</style></head><body>
+<header><button class="themebtn">◐ theme</button><h1>Does vitamin D supplementation reduce the risk of acute respiratory infections?</h1><div class="sub">factual-research 0.4.0 · packs: medicine · since 2005 · generated 2026-10-06 13:56</div></header>
+<nav><div><a href="#overview">Overview</a><a href="#prisma">PRISMA</a><a href="#findings">Findings</a><a href="#tables">Tables</a><a href="#draft">Draft & verification</a><a href="#sources">Sources</a><a href="#log">Search log</a></div></nav><main>
+<section id="overview"><h2>Overview</h2><div class="tiles"><div class="tile"><b>96</b><span>verify score (verified)</span></div><div class="tile"><b>545</b><span>records retrieved</span></div><div class="tile"><b>401</b><span>unique records</span></div><div class="tile"><b>16</b><span>included</span></div><div class="tile"><b>9</b><span>verified on full text</span></div><div class="tile"><b>3</b><span>claims in matrix</span></div><div class="tile"><b>0</b><span>retracted (included!)</span></div></div>
+<h3>Sub-questions</h3><ul><li><b>SQ1</b> Does vitamin D supplementation reduce the risk of acute respiratory infection compared with placebo?</li><li><b>SQ2</b> Does the effect depend on dosing regimen (daily vs bolus) or baseline vitamin D status?</li></ul>
+<h3>Eligibility</h3><p class=note>Include: RCTs or systematic reviews/meta-analyses of RCTs; humans; outcome = ARI incidence<br>Exclude: animal or in vitro studies; treatment of existing infection only (e.g. COVID-19 inpatients); no ARI outcome</p>
+</section>
+<section id="prisma"><h2>Study selection (PRISMA 2020 flow)</h2><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 683" class="prisma" role="img" aria-label="PRISMA flow diagram">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="ah"/></marker></defs>
+<rect x="20" y="40" width="400" height="135" rx="8" class="b"/>
+<text x="32" y="62" class="bt">Records from databases (n = 412)</text>
+<text x="32" y="82" class="bl">pubmed: 160</text>
+<text x="32" y="99" class="bl">europepmc: 80</text>
+<text x="32" y="116" class="bl">crossref: 80</text>
+<text x="32" y="133" class="bl">openalex: 80</text>
+<text x="32" y="150" class="bl">clinicaltrials: 12</text>
+<rect x="450" y="40" width="390" height="135" rx="8" class="b2"/>
+<text x="462" y="62" class="bt">Other sources (n = 133)</text>
+<text x="462" y="82" class="bl">snowball: 10</text>
+<text x="462" y="99" class="bl">watch: 123</text>
+<line x1="220" y1="175" x2="220" y2="205" class="ar" marker-end="url(#ah)"/>
+<rect x="20" y="205" width="400" height="58" rx="8" class="b"/>
+<text x="32" y="227" class="bt">After duplicates removed (n = 401)</text>
+<text x="32" y="247" class="bl">duplicates removed: 144</text>
+<line x1="220" y1="263" x2="220" y2="293" class="ar" marker-end="url(#ah)"/>
+<rect x="20" y="293" width="400" height="160" rx="8" class="b"/>
+<text x="32" y="315" class="bt">Records screened (n = 401)</text>
+<text x="32" y="335" class="bl">awaiting screening: 361</text>
+<rect x="450" y="293" width="390" height="160" rx="8" class="x"/>
+<text x="462" y="315" class="bt">Excluded (n = 24)</text>
+<text x="462" y="335" class="bl">automatic rules: 9</text>
+<text x="462" y="352" class="bl">title/abstract: 15</text>
+<text x="462" y="369" class="bl">[auto] not a research item: 5</text>
+<text x="462" y="386" class="bl">wrong intervention: 5</text>
+<text x="462" y="403" class="bl">wrong outcome: 4</text>
+<text x="462" y="420" class="bl">[auto] retracted: 2</text>
+<line x1="420" y1="323" x2="450" y2="323" class="ar" marker-end="url(#ah)"/>
+<line x1="220" y1="453" x2="220" y2="483" class="ar" marker-end="url(#ah)"/>
+<rect x="20" y="483" width="400" height="75" rx="8" class="b"/>
+<text x="32" y="505" class="bt">Reports sought (n = 16)</text>
+<text x="32" y="525" class="bl">full text retrieved: 9</text>
+<text x="32" y="542" class="bl">abstract only: 7</text>
+<rect x="450" y="483" width="390" height="75" rx="8" class="x"/>
+<text x="462" y="505" class="bt">Excluded after full text (n = 0)</text>
+<text x="462" y="525" class="bl">none</text>
+<line x1="420" y1="513" x2="450" y2="513" class="ar" marker-end="url(#ah)"/>
+<line x1="220" y1="558" x2="220" y2="588" class="ar" marker-end="url(#ah)"/>
+<rect x="20" y="588" width="400" height="75" rx="8" class="inc"/>
+<text x="32" y="610" class="bt">Included (n = 16)</text>
+<text x="32" y="630" class="bl">verified against full text: 9</text>
+<text x="20" y="22" class="ph">Identification → Screening → Included</text>
+</svg></section>
+<section id="findings"><h2>Summary of findings</h2>
+<div class="claim"><div class="t">C1 · Vitamin D supplementation reduces the risk of at least one acute respiratory infection</div><div class="meta"><span class="badge c-moderate">certainty: moderate</span><span>mostly supports</span><div class="bar" title="design-weighted support 61%"><i style="width:61%"></i></div><span>6 studies · ✔ 3 ✘ 2 ≈ 1</span></div><div class="note">start: high (best design: Systematic review / meta-analysis); inconsistency: studies disagree (−1)</div>
+<div class="ev for"><a class="cite" href="#src-martineau2017vitamin">Martineau et al., 2017</a> <span class="note">[Systematic review / meta-analysis, abstract]</span> <q>Vitamin D supplementation reduced the risk of acute respiratory tract infection among all participants (adjusted odds ratio 0.88, 95% confidence interval 0.81 to 0.96</q> <b>OR 0.88 (95% CI 0.81–0.96)</b></div>
+<div class="ev for"><a class="cite" href="#src-bergman2013vitamin">Bergman et al., 2013</a> <span class="note">[Systematic review / meta-analysis, p. 1]</span> <q>Results indicate that vitamin D has a protective effect against RTI, and dosing once-daily seems most effective</q></div>
+<div class="ev against"><a class="cite" href="#src-jolliffe2022test">Jolliffe et al., 2022</a> <span class="note">[Randomised controlled trial, p. 12]</span> <q>This was not, however, associated with protection against all cause acute respiratory tract infection or covid-19</q></div>
+<div class="ev against"><a class="cite" href="#src-camargo2024daily">Camargo et al., 2024</a> <span class="note">[Randomised controlled trial, abstract]</span> <q>recent trials, in different populations and using different regimens, have yielded null results</q></div>
+<div class="ev for"><a class="cite" href="#src-ginde2016high">Ginde et al., 2016</a> <span class="note">[Randomised controlled trial, abstract]</span> <q>Monthly high-dose vitamin D 3 supplementation reduced the incidence of ARI in older long-term care residents</q></div>
+<div class="ev mixed"><a class="cite" href="#src-jolliffe2025vitamin">Jolliffe et al., 2025</a> <span class="note">[Systematic review / meta-analysis, p. 5]</span> <q>the intervention did not significantly affect overall ARI risk (OR 0.94, 95% CI 0.88 to 1.00, P=0.057; 40 studies</q> <b>OR 0.94 (95% CI 0.88–1.00)</b></div>
+</div>
+<div class="claim"><div class="t">C2 · Daily or weekly dosing is protective, while large bolus doses are not</div><div class="meta"><span class="badge c-moderate">certainty: moderate</span><span>mostly supports</span><div class="bar" title="design-weighted support 67%"><i style="width:67%"></i></div><span>3 studies · ✔ 2 ✘ 1 ≈ 0</span></div><div class="note">start: high (best design: Systematic review / meta-analysis); inconsistency: studies disagree (−1)</div>
+<div class="ev for"><a class="cite" href="#src-martineau2017vitamin">Martineau et al., 2017</a> <span class="note">[Systematic review / meta-analysis, sec. Results]</span> <q>No such protective effect was seen among participants in trials where at least one bolus dose of vitamin D was administered (adjusted odds ratio 0.97, 0.86 to 1.10</q> <b>OR 0.97 (0.86–1.10) bolus vs OR 0.81 (0.72–0.91) daily/weekly</b></div>
+<div class="ev for"><a class="cite" href="#src-bergman2013vitamin">Bergman et al., 2013</a> <span class="note">[Systematic review / meta-analysis, p. 1]</span> <q>The protective effect was larger in studies using once-daily dosing compared to bolus doses (OR = 0.51 vs OR = 0.86, p = 0.01)</q></div>
+<div class="ev against"><a class="cite" href="#src-jolliffe2025vitamin">Jolliffe et al., 2025</a> <span class="note">[Systematic review / meta-analysis, p. 5]</span> <q>Pre-specified subgroup analysis did not reveal evidence of effect modification by age, baseline vitamin D status, or dosing regimen</q></div>
+</div>
+<div class="claim"><div class="t">C3 · Population-level test-and-treat or daily supplementation in replete adults does not prevent ARI</div><div class="meta"><span class="badge c-high">certainty: high</span><span>support (few studies)</span><div class="bar" title="design-weighted support 100%"><i style="width:100%"></i></div><span>2 studies · ✔ 2 ✘ 0 ≈ 0</span></div><div class="note">start: high (best design: Randomised controlled trial)</div>
+<div class="ev for"><a class="cite" href="#src-jolliffe2022test">Jolliffe et al., 2022</a> <span class="note">[Randomised controlled trial, p. 12]</span> <q>was not, however, associated with protection against all cause acute respiratory tract infection or covid-19</q></div>
+<div class="ev for"><a class="cite" href="#src-wallgremstrup2024high">Wall-Gremstrup et al., 2024</a> <span class="note">[Randomised controlled trial, ?]</span> <q>High-dose vitamin D 3 supplementation shows no beneficial effects on white blood cell counts, acute phase reactants, or frequency of respiratory infections</q></div>
+</div>
+</section>
+<section id="tables"><h2>Tables</h2>
+<figure class="fr-table"><figcaption>Summary of findings</figcaption><div class="scroll"><table>
+<thead><tr><th>Claim</th><th>Studies</th><th>Designs</th><th>For / against / mixed</th><th>Consensus</th><th>Certainty</th><th>Key effects</th><th>Why</th></tr></thead><tbody>
+<tr><td>C1: Vitamin D supplementation reduces the risk of at least one acute respiratory infection</td><td>6</td><td>sr_ma×3, rct×3</td><td>3 / 2 / 1</td><td>mostly supports (61%)</td><td>MODERATE</td><td>martineau2017vitamin: OR 0.88 (95% CI 0.81–0.96); jolliffe2025vitamin: OR 0.94 (95% CI 0.88–1.00)</td><td>start: high (best design: Systematic review / meta-analysis); inconsistency: studies disagree (−1)</td></tr>
+<tr><td>C2: Daily or weekly dosing is protective, while large bolus doses are not</td><td>3</td><td>sr_ma×3</td><td>2 / 1 / 0</td><td>mostly supports (67%)</td><td>MODERATE</td><td>martineau2017vitamin: OR 0.97 (0.86–1.10) bolus vs OR 0.81 (0.72–0.91) daily/weekly</td><td>start: high (best design: Systematic review / meta-analysis); inconsistency: studies disagree (−1)</td></tr>
+<tr><td>C3: Population-level test-and-treat or daily supplementation in replete adults does not prevent ARI</td><td>2</td><td>rct×2</td><td>2 / 0 / 0</td><td>support (few studies) (100%)</td><td>HIGH</td><td></td><td>start: high (best design: Randomised controlled trial)</td></tr>
+</tbody></table></div>
+<p class="note">Consensus = design-weighted share of supporting evidence. Certainty = GRADE-style: start from the best design, downgrade for inconsistency, imprecision, preprint-only, industry funding.</p>
+</figure>
+<br><figure class="fr-table"><figcaption>Evidence matrix (claim × source)</figcaption><div class="scroll"><table>
+<thead><tr><th>Source</th><th>C1</th><th>C2</th><th>C3</th></tr></thead><tbody>
+<tr><td class="study"><a href="#src-martineau2017vitamin">Martineau et al., 2017</a></td><td class="ok" title="&quot;Vitamin D supplementation reduced the risk of acute respiratory tract infection among all participants (adjusted odds ratio 0.88, 95% confidence interval 0.81 to 0.96&quot; - abstract">✔<span class="q">❝</span></td><td class="ok" title="&quot;No such protective effect was seen among participants in trials where at least one bolus dose of vitamin D was administered (adjusted odds ratio 0.97, 0.86 to 1.10&quot; - sec. Results">✔<span class="q">❝</span></td><td></td></tr>
+<tr><td class="study"><a href="#src-bergman2013vitamin">Bergman et al., 2013</a></td><td class="ok" title="&quot;Results indicate that vitamin D has a protective effect against RTI, and dosing once-daily seems most effective&quot; - p. 1">✔<span class="q">❝</span></td><td class="ok" title="&quot;The protective effect was larger in studies using once-daily dosing compared to bolus doses (OR = 0.51 vs OR = 0.86, p = 0.01)&quot; - p. 1">✔<span class="q">❝</span></td><td></td></tr>
+<tr><td class="study"><a href="#src-jolliffe2022test">Jolliffe et al., 2022</a></td><td class="ok" title="&quot;This was not, however, associated with protection against all cause acute respiratory tract infection or covid-19&quot; - p. 12">✘<span class="q">❝</span></td><td></td><td class="ok" title="&quot;was not, however, associated with protection against all cause acute respiratory tract infection or covid-19&quot; - p. 12">✔<span class="q">❝</span></td></tr>
+<tr><td class="study"><a href="#src-camargo2024daily">Camargo et al., 2024</a></td><td class="ok" title="&quot;recent trials, in different populations and using different regimens, have yielded null results&quot; - abstract">✘<span class="q">❝</span></td><td></td><td></td></tr>
+<tr><td class="study"><a href="#src-ginde2016high">Ginde et al., 2016</a></td><td class="ok" title="&quot;Monthly high-dose vitamin D 3 supplementation reduced the incidence of ARI in older long-term care residents&quot; - abstract">✔<span class="q">❝</span></td><td></td><td></td></tr>
+<tr><td class="study"><a href="#src-wallgremstrup2024high">Wall-Gremstrup et al., 2024</a></td><td></td><td></td><td class="ok" title="&quot;High-dose vitamin D 3 supplementation shows no beneficial effects on white blood cell counts, acute phase reactants, or frequency of respiratory infections&quot; - ">✔<span class="q">❝</span></td></tr>
+<tr><td class="study"><a href="#src-jolliffe2025vitamin">Jolliffe et al., 2025</a></td><td class="ok" title="&quot;the intervention did not significantly affect overall ARI risk (OR 0.94, 95% CI 0.88 to 1.00, P=0.057; 40 studies&quot; - p. 5">≈<span class="q">❝</span></td><td class="ok" title="&quot;Pre-specified subgroup analysis did not reveal evidence of effect modification by age, baseline vitamin D status, or dosing regimen&quot; - p. 5">✘<span class="q">❝</span></td><td></td></tr>
+</tbody></table></div>
+<p class="note">Claims: C1 = Vitamin D supplementation reduces the risk of at least one acute respiratory infection | C2 = Daily or weekly dosing is protective, while large bolus doses are not | C3 = Population-level test-and-treat or daily supplementation in replete adults does not prevent ARI</p>
+</figure>
+<br><figure class="fr-table"><figcaption>Characteristics and results of included studies</figcaption><div class="scroll"><table>
+<thead><tr><th>Study</th><th>Design</th><th>Population</th><th>N</th><th>Intervention / exposure</th><th>Comparator</th><th>Duration / follow-up</th><th>Effect (95% CI)</th><th>Funding / COI</th></tr></thead><tbody>
+<tr><td class="study"><a href="#src-martineau2017vitamin">Martineau et al., 2017</a></td><td class="ok" title="&quot;In this individual participant data (IPD) meta-analysis of randomised controlled trials&quot; - p. 11">IPD meta-analysis of RCTs<span class="q">❝</span></td><td></td><td class="ok" title="&quot;IPD were obtained for 10 933 (96.6%) participants&quot; - p. 1">10 933 participants<span class="q">❝</span></td><td></td><td></td><td class="bad" title="&quot;participants were followed for a median of 12 months&quot; - ">median 12 months <span class="warn">⚠</span><span class="q">❝</span></td><td class="ok" title="&quot;adjusted odds ratio 0.88, 95% confidence interval 0.81 to 0.96&quot; - abstract">OR 0.88 (95% CI 0.81–0.96)<span class="q">❝</span></td><td class="ok" title="&quot;This study was supported by a grant from the National Institute for Health Research (NIHR) under its Health Technology Assessment programme&quot; - p. 13">NIHR HTA programme<span class="q">❝</span></td></tr>
+<tr><td class="study"><a href="#src-bergman2013vitamin">Bergman et al., 2013</a></td><td class="ok" title="&quot;Systematic Review and Meta-Analysis of Randomized Controlled Trials&quot; - p. 1">Meta-analysis of RCTs<span class="q">❝</span></td><td></td><td></td><td></td><td></td><td></td><td class="ok" title="&quot;OR 0.64; 95% CI 0.49-0.84&quot; - p. 1">OR 0.64 (95% CI 0.49–0.84)<span class="q">❝</span></td><td></td></tr>
+<tr><td class="study"><a href="#src-jolliffe2022test">Jolliffe et al., 2022</a></td><td class="ok" title="&quot;Phase 3 open label randomised controlled trial&quot; - p. 1">Phase 3 open-label RCT (test-and-treat)<span class="q">❝</span></td><td class="ok" title="&quot;6200 people aged ≥16 years who were not taking vitamin D&quot; - p. 1">UK, aged ≥16 y, not taking vitamin D<span class="q">❝</span></td><td class="ok" title="&quot;phase 3 randomised controlled trial (6200 participants)&quot; - p. 1">6200<span class="q">❝</span></td><td class="ok" title="&quot;lower dose vitamin D (800 IU/day, n=1550) or higher dose vitamin D (3200 IU/day, n=1550) to those with blood 25(OH)D concentration &lt;75 nmol/L&quot; - p. 1">800 or 3200 IU/day for 6 months if 25(OH)D &lt;75 nmol/L<span class="q">❝</span></td><td class="ok" title="&quot;compared with no offer of testing or supplementation (n=3100)&quot; - p. 1">no offer of testing or supplementation<span class="q">❝</span></td><td></td><td class="ok" title="&quot;odds ratio 1.26, 95% confidence interval 0.96 to 1.66) and 76/1515 (5.0%) in the higher dose group (1.09, 0.82 to 1.46)&quot; - p. 1">OR 1.26 (95% CI 0.96–1.66) lower dose; OR 1.09 (0.82–1.46) higher dose<span class="q">❝</span></td><td class="ok" title="&quot;This study was supported by Barts Charity (refs MGU0459 and MGU0466), Pharma Nord, the Fischer Family Foundation, DSM Nutritional Products&quot; - p. 13">Barts Charity, Pharma Nord, DSM Nutritional Products and others<span class="q">❝</span></td></tr>
+</tbody></table></div>
+<p class="note">Every non-empty cell is backed by a verbatim quote from the source (hover in HTML report).</p>
+<p class="note">1 cell(s) failed verification - marked ⚠.</p>
+</figure>
+<h3>Forest plot</h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 168" class="forest" role="img" aria-label="Forest plot">
+<text x="230" y="20" class="fp-title">Effect estimates (95% CI)</text>
+<line x1="436.3" y1="34" x2="436.3" y2="134" class="fp-null"/>
+<text x="8" y="54" class="fp-lab">@bergman2013vitamin</text>
+<line x1="254.8" y1="50" x2="391.9" y2="50" class="fp-ci"/>
+<rect x="317.8" y="45" width="10" height="10" class="fp-pt"/>
+<text x="602" y="54" class="fp-val">OR 0.64 [0.49, 0.84]</text>
+<text x="8" y="80" class="fp-lab">@jolliffe2022test</text>
+<line x1="425.9" y1="76" x2="565.2" y2="76" class="fp-ci"/>
+<rect x="490.0" y="71" width="10" height="10" class="fp-pt"/>
+<text x="602" y="80" class="fp-val">OR 1.26 [0.96, 1.66]</text>
+<text x="8" y="106" class="fp-lab">@martineau2017vitamin</text>
+<line x1="382.7" y1="102" x2="425.9" y2="102" class="fp-ci"/>
+<rect x="398.8" y="97" width="10" height="10" class="fp-pt"/>
+<text x="602" y="106" class="fp-val">OR 0.88 [0.81, 0.96]</text>
+<text x="436.3" y="152" class="fp-tick" text-anchor="middle">1</text>
+<text x="260.0" y="152" class="fp-tick" text-anchor="middle">0.5</text>
+<text x="428.3" y="166" class="fp-tick" text-anchor="end">favours intervention</text>
+<text x="444.3" y="166" class="fp-tick">favours control</text>
+</svg><p class=note>Effect estimates as extracted (not pooled).</p>
+<br><figure class="fr-table"><figcaption>Dosing regimen and protection against ARI</figcaption><div class="scroll"><table>
+<thead><tr><th>Source</th><th>Regimen</th><th>Effect</th><th>Interpretation</th></tr></thead><tbody>
+<tr><td class="study"><a href="#src-martineau2017vitamin">Martineau et al., 2017</a></td><td>daily or weekly, no bolus</td><td class="ok" title="&quot;adjusted odds ratio 0.81, 0.72 to 0.91&quot; - ">OR 0.81 (0.72–0.91)<span class="q">❝</span></td><td>protective</td></tr>
+<tr><td class="study"><a href="#src-martineau2017vitamin">Martineau et al., 2017</a></td><td>≥1 bolus dose</td><td class="ok" title="&quot;adjusted odds ratio 0.97, 0.86 to 1.10&quot; - ">OR 0.97 (0.86–1.10)<span class="q">❝</span></td><td>no effect</td></tr>
+<tr><td class="study"><a href="#src-bergman2013vitamin">Bergman et al., 2013</a></td><td>once-daily vs bolus</td><td class="ok" title="">OR 0.51 vs 0.86</td><td>daily larger effect</td></tr>
+</tbody></table></div>
+<p class="note">Effects as reported by each meta-analysis; not pooled.</p>
+</figure>
+</section>
+<section id="draft"><h2>Draft & verification</h2>
+<div class="score">96/100 <span class="badge">verified</span> <span class="badge">PASS</span></div><p class="note">support 88 · numbers 100 · quotes 100 · coverage 100 · calibration 100 · balance_scope 100 · errors 0, warnings 0, notes 0</p>
+<h3>Text</h3><div class="draft"><h2>Vitamin D and acute respiratory infections</h2>
+<h3>Overall effect</h3>
+<p>An individual participant data meta-analysis found that vitamin D supplementation reduced the risk of acute respiratory tract infection <a class="cite" href="#src-martineau2017vitamin" title="&quot;Vitamin D supplementation reduced the risk of acute respiratory tract infection among all participants&quot; - p. 1">Martineau et al., 2017, p. 1</a>. Across 10 933 participants, the adjusted odds ratio was 0.88 (95% CI 0.81 to 0.96) <a class="cite" href="#src-martineau2017vitamin" title="Vitamin D supplementation to prevent acute respiratory tract infections: systematic review and meta-analysis of individual participant data">Martineau et al., 2017</a>.</p>
+<p>The most recent update, however, combined 40 placebo-controlled trials and found that vitamin D did not significantly affect overall ARI risk (OR 0.94, 95% CI 0.88 to 1.00) <a class="cite" href="#src-jolliffe2025vitamin" title="&quot;the intervention did not significantly affect overall ARI risk (OR 0.94, 95% CI 0.88 to 1.00, P=0.057; 40 studies&quot; - p. 5">Jolliffe et al., 2025, p. 5</a>. Large pragmatic trials were also null: a UK test-and-treat trial in 6200 people was not associated with protection against acute respiratory infection <a class="cite" href="#src-jolliffe2022test" title="&quot;This was not, however, associated with protection against all cause acute respiratory tract infection or covid-19&quot;">Jolliffe et al., 2022</a>, and a trial of daily supplementation in older adults joined other recent null results <a class="cite" href="#src-camargo2024daily" title="&quot;recent trials, in different populations and using different regimens, have yielded null results&quot;">Camargo et al., 2024</a>.</p>
+<h3>Dosing</h3>
+<p>Earlier analyses suggested that daily or weekly regimens were protective (OR 0.81), whereas bolus doses were not (OR 0.97) <a class="cite" href="#src-martineau2017vitamin" title="&quot;protective effects were seen in those receiving daily or weekly vitamin D without additional bolus doses (adjusted odds ratio 0.81, 0.72 to 0.91) but not in those receiving one or more bolus doses (adjusted odds ratio 0.97, 0.86 to 1.10&quot; - p. 1">Martineau et al., 2017, p. 1</a>. The 2025 update did not confirm this effect modification <a class="cite" href="#src-jolliffe2025vitamin" title="&quot;Pre-specified subgroup analysis did not reveal evidence of effect modification by age, baseline vitamin D status, or dosing regimen&quot; - p. 5">Jolliffe et al., 2025, p. 5</a>.</p>
+<figure class="fr-table"><figcaption>Dosing regimen and protection against ARI</figcaption><div class="scroll"><table>
+<thead><tr><th>Source</th><th>Regimen</th><th>Effect</th><th>Interpretation</th></tr></thead><tbody>
+<tr><td class="study"><a href="#src-martineau2017vitamin">Martineau et al., 2017</a></td><td>daily or weekly, no bolus</td><td class="ok" title="&quot;adjusted odds ratio 0.81, 0.72 to 0.91&quot; - ">OR 0.81 (0.72–0.91)<span class="q">❝</span></td><td>protective</td></tr>
+<tr><td class="study"><a href="#src-martineau2017vitamin">Martineau et al., 2017</a></td><td>≥1 bolus dose</td><td class="ok" title="&quot;adjusted odds ratio 0.97, 0.86 to 1.10&quot; - ">OR 0.97 (0.86–1.10)<span class="q">❝</span></td><td>no effect</td></tr>
+<tr><td class="study"><a href="#src-bergman2013vitamin">Bergman et al., 2013</a></td><td>once-daily vs bolus</td><td class="ok" title="">OR 0.51 vs 0.86</td><td>daily larger effect</td></tr>
+</tbody></table></div>
+<p class="note">Effects as reported by each meta-analysis; not pooled.</p>
+</figure>
+<h3>Evidence table</h3>
+<figure class="fr-table"><figcaption>Characteristics and results of included studies</figcaption><div class="scroll"><table>
+<thead><tr><th>Study</th><th>Design</th><th>N</th><th>Effect (95% CI)</th><th>Funding / COI</th></tr></thead><tbody>
+<tr><td class="study"><a href="#src-martineau2017vitamin">Martineau et al., 2017</a></td><td class="ok" title="&quot;In this individual participant data (IPD) meta-analysis of randomised controlled trials&quot; - p. 11">IPD meta-analysis of RCTs<span class="q">❝</span></td><td class="ok" title="&quot;IPD were obtained for 10 933 (96.6%) participants&quot; - p. 1">10 933 participants<span class="q">❝</span></td><td class="ok" title="&quot;adjusted odds ratio 0.88, 95% confidence interval 0.81 to 0.96&quot; - abstract">OR 0.88 (95% CI 0.81–0.96)<span class="q">❝</span></td><td class="ok" title="&quot;This study was supported by a grant from the National Institute for Health Research (NIHR) under its Health Technology Assessment programme&quot; - p. 13">NIHR HTA programme<span class="q">❝</span></td></tr>
+<tr><td class="study"><a href="#src-bergman2013vitamin">Bergman et al., 2013</a></td><td class="ok" title="&quot;Systematic Review and Meta-Analysis of Randomized Controlled Trials&quot; - p. 1">Meta-analysis of RCTs<span class="q">❝</span></td><td></td><td class="ok" title="&quot;OR 0.64; 95% CI 0.49-0.84&quot; - p. 1">OR 0.64 (95% CI 0.49–0.84)<span class="q">❝</span></td><td></td></tr>
+<tr><td class="study"><a href="#src-jolliffe2022test">Jolliffe et al., 2022</a></td><td class="ok" title="&quot;Phase 3 open label randomised controlled trial&quot; - p. 1">Phase 3 open-label RCT (test-and-treat)<span class="q">❝</span></td><td class="ok" title="&quot;phase 3 randomised controlled trial (6200 participants)&quot; - p. 1">6200<span class="q">❝</span></td><td class="ok" title="&quot;odds ratio 1.26, 95% confidence interval 0.96 to 1.66) and 76/1515 (5.0%) in the higher dose group (1.09, 0.82 to 1.46)&quot; - p. 1">OR 1.26 (95% CI 0.96–1.66) lower dose; OR 1.09 (0.82–1.46) higher dose<span class="q">❝</span></td><td class="ok" title="&quot;This study was supported by Barts Charity (refs MGU0459 and MGU0466), Pharma Nord, the Fischer Family Foundation, DSM Nutritional Products&quot; - p. 13">Barts Charity, Pharma Nord, DSM Nutritional Products and others<span class="q">❝</span></td></tr>
+</tbody></table></div>
+<p class="note">Every non-empty cell is backed by a verbatim quote from the source (hover in HTML report).</p>
+</figure>
+<h3>Bottom line</h3>
+<p>The benefit, if any, appears small and is now uncertain; the certainty of evidence for an overall protective effect is moderate at best.</p></div></section>
+<section id="sources"><h2>Included sources (16)</h2><div class="scroll"><table><thead><tr><th>Reference</th><th>Design</th><th>Weight</th><th>Text</th><th>Flags</th></tr></thead><tbody>
+<tr id="src-wang2025role"><td><b>@wang2025role</b><br>Wang L, Yu Y, Liu K, Yu X, Li Y. The role of vitamin D in the prevention and treatment of acute respiratory infections in pediatric populations: a systematic review and meta-analysis of randomized controlled trials. BMC pediatrics. 2025;25(1):985. doi:10.1186/s12887-025-06361-6. · <a href="https://europepmc.org/article/MED/41387808">link</a></td><td>Systematic review / meta-analysis<br><span class="note">pubtype:meta-analysis</span></td><td>1.00</td><td>fulltext</td><td></td></tr>
+<tr id="src-cho2022efficacy"><td><b>@cho2022efficacy</b><br>Cho HE, Myung SK, Cho H. Efficacy of Vitamin D Supplements in Prevention of Acute Respiratory Infection: A Meta-Analysis for Randomized Controlled Trials. Nutrients. 2022;14(4):818. doi:10.3390/nu14040818. · <a href="https://doi.org/10.3390/nu14040818">link</a></td><td>Systematic review / meta-analysis<br><span class="note">pubtype:meta-analysis</span></td><td>1.00</td><td>fulltext</td><td></td></tr>
+<tr id="src-jia2024vitamin"><td><b>@jia2024vitamin</b><br>Jia H, Sheng F, Yan Y, Liu X, Zeng B. Vitamin D supplementation for prevention of acute respiratory infections in older adults: A systematic review and meta-analysis. PLOS ONE. 2024;19(5):e0303495. doi:10.1371/journal.pone.0303495. · <a href="https://doi.org/10.1371/journal.pone.0303495">link</a></td><td>Systematic review / meta-analysis<br><span class="note">pubtype:meta-analysis</span></td><td>1.00</td><td>fulltext</td><td></td></tr>
+<tr id="src-fang2023meta"><td><b>@fang2023meta</b><br>Fang Q, Wu Y, Lu J, Zheng H. A meta-analysis of the association between vitamin D supplementation and the risk of acute respiratory tract infection in the healthy pediatric group. Frontiers in Nutrition. 2023;10:1188958. doi:10.3389/fnut.2023.1188958. · <a href="https://doi.org/10.3389/fnut.2023.1188958">link</a></td><td>Systematic review / meta-analysis<br><span class="note">pubtype:systematic review</span></td><td>1.00</td><td>fulltext</td><td></td></tr>
+<tr id="src-martineau2017vitamin"><td><b>@martineau2017vitamin</b><br>Martineau AR, Jolliffe DA, Hooper RL, Greenberg L, Aloia JF, Bergman P, et al. Vitamin D supplementation to prevent acute respiratory tract infections: systematic review and meta-analysis of individual participant data. BMJ (Clinical research ed.). 2017;356:i6583. doi:10.1136/bmj.i6583. · <a href="https://pubmed.ncbi.nlm.nih.gov/28202713/">link</a></td><td>Systematic review / meta-analysis<br><span class="note">pubtype:meta-analysis</span></td><td>1.00</td><td>fulltext</td><td></td></tr>
+<tr id="src-jolliffe2025vitamin"><td><b>@jolliffe2025vitamin</b><br>Jolliffe DA, Camargo CA, Sluyter JD, Aglipay M, Aloia JF, Bergman P, et al. Vitamin D supplementation to prevent acute respiratory infections: systematic review and meta-analysis of stratified aggregate data. The lancet. Diabetes &amp; endocrinology. 2025;13(4):307-320. doi:10.1016/S2213-8587(24)00348-6. · <a href="https://pubmed.ncbi.nlm.nih.gov/39993397/">link</a></td><td>Systematic review / meta-analysis<br><span class="note">pubtype:meta-analysis</span></td><td>1.00</td><td>fulltext</td><td><span class="flag">corrected</span></td></tr>
+<tr id="src-jolliffe2021vitamin"><td><b>@jolliffe2021vitamin</b><br>Jolliffe DA, Camargo CA, Sluyter JD, Aglipay M, Aloia JF, Ganmaa D, et al. Vitamin D supplementation to prevent acute respiratory infections: a systematic review and meta-analysis of aggregate data from randomised controlled trials. The lancet. Diabetes &amp; endocrinology. 2021;9(5):276-292. doi:10.1016/S2213-8587(21)00051-6. · <a href="https://pubmed.ncbi.nlm.nih.gov/33798465/">link</a></td><td>Systematic review / meta-analysis<br><span class="note">pubtype:meta-analysis</span></td><td>1.00</td><td>abstract</td><td><span class="flag">industry funding/COI</span></td></tr>
+<tr id="src-bergman2013vitamin"><td><b>@bergman2013vitamin</b><br>Bergman P, Lindh ÅU, Björkhem‐Bergman L, Lindh JD. Vitamin D and Respiratory Tract Infections: A Systematic Review and Meta-Analysis of Randomized Controlled Trials. PLoS ONE. 2013;8(6):e65835. doi:10.1371/journal.pone.0065835. · <a href="https://doi.org/10.1371/journal.pone.0065835">link</a></td><td>Systematic review / meta-analysis<br><span class="note">pubtype:meta-analysis</span></td><td>1.00</td><td>fulltext</td><td></td></tr>
+<tr id="src-pediatrics2012randomized"><td><b>@pediatrics2012randomized</b><br>Camargo CA, Ganmaa D, Frazier AL, Kirchberg FF, Stuart JJ, Kleinman K, et al. Randomized Trial of Vitamin D Supplementation and Risk of Acute Respiratory Infection in Mongolia. PEDIATRICS. 2012;130(3):X29. doi:10.1542/peds.2011-3029d. · <a href="https://doi.org/10.1542/peds.2011-3029d">link</a></td><td>Randomised controlled trial<br><span class="note">pubtype:randomized controlled trial</span></td><td>0.85</td><td>abstract</td><td></td></tr>
+<tr id="src-laaksi2010vitamin"><td><b>@laaksi2010vitamin</b><br>Laaksi I, Ruohola J, Mattila V, Auvinen A, Ylikomi T, Pihlajamäki H. Vitamin D Supplementation for the Prevention of Acute Respiratory Tract Infection: A Randomized, Double‐Blinded Trial among Young Finnish Men. The Journal of Infectious Diseases. 2010;202(5):809-814. doi:10.1086/654881. · <a href="https://doi.org/10.1086/654881">link</a></td><td>Randomised controlled trial<br><span class="note">pubtype:randomized controlled trial</span></td><td>0.85</td><td>abstract</td><td></td></tr>
+<tr id="src-camargo2024daily"><td><b>@camargo2024daily</b><br>Camargo CA, Schaumberg DA, Friedenberg G, Dushkes R, Glynn RJ, Gold DR, et al. Effect of Daily Vitamin D Supplementation on Risk of Upper Respiratory Infection in Older Adults: A Randomized Controlled Trial. Clinical infectious diseases : an official publication of the Infectious Diseases Society of America. 2024;78(5):1162-1169. doi:10.1093/cid/ciad770. · <a href="https://pubmed.ncbi.nlm.nih.gov/38113446/">link</a></td><td>Randomised controlled trial<br><span class="note">pubtype:randomized controlled trial</span></td><td>0.85</td><td>abstract</td><td><span class="flag">industry funding/COI</span></td></tr>
+<tr id="src-ginde2016high"><td><b>@ginde2016high</b><br>Ginde AA, Blatchford PJ, Breese K, Zarrabi L, Linnebur SA, Wallace JI, et al. High‐Dose Monthly Vitamin D for Prevention of Acute Respiratory Infection in Older Long‐Term Care Residents: A Randomized Clinical Trial. Journal of the American Geriatrics Society. 2016;65(3):496-503. doi:10.1111/jgs.14679. · <a href="https://doi.org/10.1111/jgs.14679">link</a></td><td>Randomised controlled trial<br><span class="note">pubtype:randomized controlled trial</span></td><td>0.85</td><td>abstract</td><td></td></tr>
+<tr id="src-wallgremstrup2024high"><td><b>@wallgremstrup2024high</b><br>Wall-Gremstrup G, Holt R, Yahyavi SK, Jorsal MJ, Juul A, Jørgensen N, et al. High-dose vitamin D 3 supplementation shows no beneficial effects on white blood cell counts, acute phase reactants, or frequency of respiratory infections. Respiratory research. 2024;25(1):11. doi:10.1186/s12931-023-02642-9. · <a href="https://europepmc.org/article/MED/38178229">link</a></td><td>Randomised controlled trial<br><span class="note">pubtype:randomized controlled trial</span></td><td>0.85</td><td>fulltext</td><td></td></tr>
+<tr id="src-clerico2025vitamin"><td><b>@clerico2025vitamin</b><br>Clerico JW, Thams L, Stounbjerg NG, Hauger H, Damsgaard CT, Mølgaard C. Effects of vitamin D supplementation on acute respiratory tract infections in 6-8-year-old children: a randomized clinical trial. European journal of nutrition. 2025;64(4):170. doi:10.1007/s00394-025-03674-1. · <a href="https://pubmed.ncbi.nlm.nih.gov/40310565/">link</a></td><td>Randomised controlled trial<br><span class="note">pubtype:randomized controlled trial</span></td><td>0.85</td><td>abstract</td><td></td></tr>
+<tr id="src-martineau2015doublea"><td><b>@martineau2015doublea</b><br>Martineau AR, Hanifa Y, Witt KD, Barnes NC, Hooper R, Patel M, et al. Double-blind randomised controlled trial of vitamin D3supplementation for the prevention of acute respiratory infection in older adults and their carers (ViDiFlu). Thorax. 2015;70(10):953-960. doi:10.1136/thoraxjnl-2015-206996. · <a href="https://doi.org/10.1136/thoraxjnl-2015-206996">link</a></td><td>Randomised controlled trial<br><span class="note">pubtype:randomized controlled trial</span></td><td>0.85</td><td>abstract</td><td></td></tr>
+<tr id="src-jolliffe2022test"><td><b>@jolliffe2022test</b><br>Jolliffe DA, Holt H, Greenig M, Talaei M, Perdek N, Pfeffer P, et al. Effect of a test-and-treat approach to vitamin D supplementation on risk of all cause acute respiratory tract infection and covid-19: phase 3 randomised controlled trial (CORONAVIT). BMJ. 2022;378:e071230. doi:10.1136/bmj-2022-071230. · <a href="https://doi.org/10.1136/bmj-2022-071230">link</a></td><td>Randomised controlled trial<br><span class="note">pubtype:randomized controlled trial</span></td><td>0.85</td><td>fulltext</td><td><span class="flag">industry funding/COI</span></td></tr>
+</tbody></table></div></section>
+<section id="log"><h2>Search log</h2><details><summary>22 queries - full reproducibility record in research.lock.json</summary><div class="scroll"><table><thead><tr><th>Date</th><th>SQ</th><th>Source</th><th>Query</th><th>Total</th><th>Got</th></tr></thead><tbody>
+<tr><td>2026-10-06 03:34</td><td>SQ1</td><td>clinicaltrials</td><td><code>vitamin D supplementation acute respiratory infection prevention randomized</code></td><td>12</td><td>12</td></tr>
+<tr><td>2026-10-06 03:34</td><td>SQ1</td><td>europepmc</td><td><code>vitamin D supplementation acute respiratory infection prevention randomized</code></td><td>5534</td><td>40</td></tr>
+<tr><td>2026-10-06 03:34</td><td>SQ1</td><td>crossref</td><td><code>vitamin D supplementation acute respiratory infection prevention randomized</code></td><td>2512747</td><td>40</td></tr>
+<tr><td>2026-10-06 03:34</td><td>SQ1</td><td>pubmed</td><td><code>((&quot;Vitamin D&quot;[MeSH] OR &quot;vitamin D&quot;[tiab] OR cholecalciferol[tiab]) AND (&quot;Respiratory Tract Infections&quot;[MeSH] OR &quot;acute respiratory infection*&quot;[tiab]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systemati</code></td><td>334</td><td>40</td></tr>
+<tr><td>2026-10-06 03:34</td><td>SQ1</td><td>openalex</td><td><code>vitamin D supplementation acute respiratory infection prevention randomized</code></td><td>30428</td><td>40</td></tr>
+<tr><td>2026-10-06 03:34</td><td>SQ1</td><td>pubmed</td><td><code>(&quot;Vitamin D&quot;[MeSH] OR &quot;vitamin D&quot;[tiab] OR cholecalciferol[tiab]) AND (&quot;Respiratory Tract Infections&quot;[MeSH] OR &quot;acute respiratory infection*&quot;[tiab]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic</code></td><td>334</td><td>40</td></tr>
+<tr><td>2026-10-06 03:34</td><td>SQ2</td><td>clinicaltrials</td><td><code>vitamin D daily versus bolus dosing respiratory infection baseline 25-hydroxyvitamin D</code></td><td>0</td><td>0</td></tr>
+<tr><td>2026-10-06 03:34</td><td>SQ2</td><td>europepmc</td><td><code>vitamin D daily versus bolus dosing respiratory infection baseline 25-hydroxyvitamin D</code></td><td>347</td><td>40</td></tr>
+<tr><td>2026-10-06 03:34</td><td>SQ2</td><td>crossref</td><td><code>vitamin D daily versus bolus dosing respiratory infection baseline 25-hydroxyvitamin D</code></td><td>68547</td><td>40</td></tr>
+<tr><td>2026-10-06 03:34</td><td>SQ2</td><td>pubmed</td><td><code>((&quot;vitamin D&quot;[tiab]) AND (&quot;respiratory tract infections&quot;[MeSH] OR &quot;respiratory infection*&quot;[tiab]) AND (bolus[tiab] OR daily[tiab] OR &quot;baseline&quot;[tiab]) AND (meta-analysis[pt] OR randomized controlled trial[pt])) AND (syst</code></td><td>107</td><td>40</td></tr>
+<tr><td>2026-10-06 03:34</td><td>SQ2</td><td>openalex</td><td><code>vitamin D daily versus bolus dosing respiratory infection baseline 25-hydroxyvitamin D</code></td><td>682</td><td>40</td></tr>
+<tr><td>2026-10-06 03:34</td><td>SQ2</td><td>pubmed</td><td><code>(&quot;vitamin D&quot;[tiab]) AND (&quot;respiratory tract infections&quot;[MeSH] OR &quot;respiratory infection*&quot;[tiab]) AND (bolus[tiab] OR daily[tiab] OR &quot;baseline&quot;[tiab]) AND (meta-analysis[pt] OR randomized controlled trial[pt])</code></td><td>107</td><td>40</td></tr>
+<tr><td>2026-10-06 03:54</td><td>SQ1</td><td>clinicaltrials</td><td><code>vitamin D supplementation acute respiratory infection prevention randomized</code></td><td>12</td><td>12</td></tr>
+<tr><td>2026-10-06 03:54</td><td>SQ1</td><td>crossref</td><td><code>vitamin D supplementation acute respiratory infection prevention randomized</code></td><td>2512753</td><td>60</td></tr>
+<tr><td>2026-10-06 03:54</td><td>SQ1</td><td>europepmc</td><td><code>vitamin D supplementation acute respiratory infection prevention randomized</code></td><td>5534</td><td>60</td></tr>
+<tr><td>2026-10-06 03:54</td><td>SQ2</td><td>europepmc</td><td><code>vitamin D daily versus bolus dosing respiratory infection baseline 25-hydroxyvitamin D</code></td><td>347</td><td>60</td></tr>
+<tr><td>2026-10-06 03:54</td><td>SQ1</td><td>openalex</td><td><code>vitamin D supplementation acute respiratory infection prevention randomized</code></td><td>30428</td><td>60</td></tr>
+<tr><td>2026-10-06 03:54</td><td>SQ1</td><td>pubmed</td><td><code>(&quot;Vitamin D&quot;[MeSH] OR &quot;vitamin D&quot;[tiab] OR cholecalciferol[tiab]) AND (&quot;Respiratory Tract Infections&quot;[MeSH] OR &quot;acute respiratory infection*&quot;[tiab]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic</code></td><td>334</td><td>60</td></tr>
+<tr><td>2026-10-06 03:54</td><td>SQ2</td><td>clinicaltrials</td><td><code>vitamin D daily versus bolus dosing respiratory infection baseline 25-hydroxyvitamin D</code></td><td>0</td><td>0</td></tr>
+<tr><td>2026-10-06 03:54</td><td>SQ2</td><td>openalex</td><td><code>vitamin D daily versus bolus dosing respiratory infection baseline 25-hydroxyvitamin D</code></td><td>682</td><td>60</td></tr>
+<tr><td>2026-10-06 03:54</td><td>SQ2</td><td>crossref</td><td><code>vitamin D daily versus bolus dosing respiratory infection baseline 25-hydroxyvitamin D</code></td><td>68547</td><td>60</td></tr>
+<tr><td>2026-10-06 03:54</td><td>SQ2</td><td>pubmed</td><td><code>(&quot;vitamin D&quot;[tiab]) AND (&quot;respiratory tract infections&quot;[MeSH] OR &quot;respiratory infection*&quot;[tiab]) AND (bolus[tiab] OR daily[tiab] OR &quot;baseline&quot;[tiab]) AND (meta-analysis[pt] OR randomized controlled trial[pt])</code></td><td>107</td><td>60</td></tr>
+</tbody></table></div></details></section>
+</main><script>
+document.querySelector('.themebtn').onclick=()=>{const r=document.documentElement;
+const cur=r.dataset.theme||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+r.dataset.theme=cur==='dark'?'light':'dark';};
+</script></body></html>

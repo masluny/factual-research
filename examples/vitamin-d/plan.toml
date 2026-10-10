@@ -1,0 +1,39 @@
+# factual-research research plan: edit freely, then run `factual-research search`.
+# Strings in single quotes are literal (handy for PubMed syntax with "double quotes").
+
+[factual_research]
+version = 1
+created = "2026-10-06"
+
+[question]
+text = "Does vitamin D supplementation reduce the risk of acute respiratory infections?"
+lang = "en"                 # language of the final text (en / pl / ...)
+packs = ["medicine"]         # domain packs: `factual-research packs` lists them
+since = 2005                 # earliest publication year searched
+frame = "PICO"
+population = "children and adults, general population"
+intervention = "oral vitamin D2/D3 supplementation"
+comparator = "placebo or no supplementation"
+outcome = "incidence of acute respiratory infection (ARI)"
+
+[criteria]
+# Screening criteria the agent applies at title/abstract and full-text stage.
+include = ["RCTs or systematic reviews/meta-analyses of RCTs", "humans", "outcome = ARI incidence"]
+exclude = ["animal or in vitro studies", "treatment of existing infection only (e.g. COVID-19 inpatients)", "no ARI outcome"]
+languages = ["en", "pl"]       # records in other languages are auto-excluded (unknown = kept)
+
+# One block per sub-question. `queries` run on every connector of the packs;
+# `connector_queries` override that for one source (use its native syntax).
+[[subq]]
+id = "SQ1"
+text = "Does vitamin D supplementation reduce the risk of acute respiratory infection compared with placebo?"
+queries = ["vitamin D supplementation acute respiratory infection prevention randomized"]
+[subq.connector_queries]
+pubmed = '("Vitamin D"[MeSH] OR "vitamin D"[tiab] OR cholecalciferol[tiab]) AND ("Respiratory Tract Infections"[MeSH] OR "acute respiratory infection*"[tiab]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic review[pt])'
+
+[[subq]]
+id = "SQ2"
+text = "Does the effect depend on dosing regimen (daily vs bolus) or baseline vitamin D status?"
+queries = ["vitamin D daily versus bolus dosing respiratory infection baseline 25-hydroxyvitamin D"]
+[subq.connector_queries]
+pubmed = '("vitamin D"[tiab]) AND ("respiratory tract infections"[MeSH] OR "respiratory infection*"[tiab]) AND (bolus[tiab] OR daily[tiab] OR "baseline"[tiab]) AND (meta-analysis[pt] OR randomized controlled trial[pt])'

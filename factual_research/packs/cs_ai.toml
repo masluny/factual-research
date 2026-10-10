@@ -1,0 +1,70 @@
+# Computer science, machine learning, AI.
+name = "cs_ai"
+title = "Computer science & AI"
+description = "Algorithms, ML/AI, NLP, systems, security, HCI."
+keywords = ["algorithm", "algorytm", "neural", "neuron", "machine learning", "uczenie maszyn", "deep learning",
+  "llm", "language model", "model język", "transformer", "benchmark", "dataset", "zbiór danych", "nlp", "computer vision",
+  "reinforcement", "software", "oprogramow", "compiler", "kompilator", "database", "baza danych", "distributed",
+  "rozproszon", "security", "bezpieczeńst", "cryptograph", "kryptograf", "retrieval", "rag", "embedding", "gpu",
+  "inference", "fine-tun", "agent", "prompt", "hallucination", "halucynac", "graph neural", "classification", "klasyfikac"]
+openalex_fields = ["Computer Science", "Mathematics", "Decision Sciences"]
+connectors = ["openalex", "arxiv", "crossref"]
+optional_connectors = ["semanticscholar", "dblp"]
+per_query = 50
+since = 2012
+citation_style = "ieee"
+question_frame = "task, method, dataset/benchmark, metric"
+top_venues = ["NeurIPS", "Neural Information Processing Systems", "ICML", "International Conference on Machine Learning",
+  "ICLR", "ACL", "EMNLP", "NAACL", "CVPR", "ICCV", "ECCV", "AAAI", "IJCAI", "KDD", "SIGIR", "WWW", "The Web Conference",
+  "OSDI", "SOSP", "NSDI", "USENIX Security", "IEEE S&P", "Symposium on Security and Privacy", "CCS", "CHI", "STOC",
+  "FOCS", "SODA", "PLDI", "POPL", "ICSE", "FSE", "VLDB", "SIGMOD", "JMLR", "TPAMI", "Transactions on Machine Learning Research"]
+
+[authorities]
+names = ["ACM", "IEEE", "NIST", "IETF (RFC)", "W3C"]
+
+[evidence]
+order = ["sr_ma", "conference_paper", "journal_article", "technical_report", "preprint", "book", "thesis",
+  "narrative_review", "dataset", "other"]
+[evidence.weight]
+sr_ma = 0.85
+conference_paper = 0.65
+journal_article = 0.65
+technical_report = 0.45
+preprint = 0.35
+book = 0.5
+thesis = 0.3
+narrative_review = 0.45
+dataset = 0.5
+standard = 0.9
+editorial = 0.05
+other = 0.2
+[evidence.grade_start]
+sr_ma = "high"
+conference_paper = "moderate"
+journal_article = "moderate"
+technical_report = "low"
+preprint = "low"
+book = "moderate"
+narrative_review = "low"
+standard = "high"
+# papers at top_venues get +0.15 weight
+
+[screening]
+auto_exclude_retracted = true
+auto_exclude_designs = []
+
+[extraction]
+fields = [
+  { id = "task", label = "Task" },
+  { id = "method", label = "Method / model" },
+  { id = "data", label = "Dataset / benchmark" },
+  { id = "metric", label = "Metric" },
+  { id = "result", label = "Result", hint = "copy the exact number from the paper's table/text" },
+  { id = "baseline", label = "Best baseline" },
+  { id = "compute", label = "Compute / scale" },
+  { id = "code", label = "Code / data available" },
+  { id = "limitations", label = "Limitations" },
+]
+
+[causal]
+allowed = ["sr_ma", "conference_paper", "journal_article"]

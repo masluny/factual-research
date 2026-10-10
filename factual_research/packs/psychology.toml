@@ -1,0 +1,60 @@
+# Psychology, education, behavioural and social science.
+name = "psychology"
+title = "Psychology & behavioural science"
+description = "Cognition, behaviour, mental health, education. Replication-aware."
+keywords = ["psycholog", "behavio", "zachowan", "cognitive", "poznawcz", "memory", "pamięć", "attention", "uwag",
+  "anxiety", "lęk", "depress", "motivation", "motywac", "personality", "osobowoś", "learning", "uczenie się",
+  "education", "edukac", "student", "habit", "nawyk", "stress", "stres", "wellbeing", "dobrostan", "mindfulness",
+  "social media", "media społeczn", "procrastinat", "prokrastyn", "self-esteem", "samoocen", "bias", "heurystyk"]
+openalex_fields = ["Psychology", "Social Sciences", "Neuroscience", "Arts and Humanities"]
+connectors = ["openalex", "pubmed", "europepmc", "crossref"]
+optional_connectors = ["semanticscholar"]
+per_query = 50
+since = 2000
+citation_style = "apa"
+question_frame = "population, intervention/exposure, comparator, outcome (PICO) or construct-relation"
+
+[authorities]
+names = ["APA", "Cochrane", "Campbell Collaboration", "WHO", "Many Labs / registered replication reports"]
+
+[evidence]
+order = ["sr_ma", "rct", "cohort", "observational", "cross_sectional", "journal_article", "narrative_review", "preprint", "other"]
+[evidence.weight]
+sr_ma = 0.95
+rct = 0.8
+clinical_trial = 0.5
+cohort = 0.5
+case_control = 0.35
+cross_sectional = 0.3
+observational = 0.35
+journal_article = 0.4
+narrative_review = 0.3
+preprint = 0.3
+case_report = 0.1
+editorial = 0.05
+other = 0.15
+[evidence.grade_start]
+sr_ma = "high"
+rct = "high"
+cohort = "low"
+cross_sectional = "low"
+observational = "low"
+journal_article = "low"
+preprint = "low"
+
+[screening]
+auto_exclude_retracted = true
+replication_hint = true   # flag single-study claims; prefer pre-registered / replicated findings
+
+[extraction]
+fields = [
+  { id = "design", label = "Design", hint = "pre-registered? experiment / longitudinal / survey" },
+  { id = "sample", label = "Sample (N, who)" },
+  { id = "measure", label = "Measures" },
+  { id = "effect", label = "Effect size", hint = "d / r / OR with CI exactly as reported" },
+  { id = "replication", label = "Replication status" },
+  { id = "limitations", label = "Limitations" },
+]
+
+[causal]
+allowed = ["sr_ma", "rct"]

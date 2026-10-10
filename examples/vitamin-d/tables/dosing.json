@@ -1,0 +1,8 @@
+{"title": "Dosing regimen and protection against ARI",
+ "columns": ["Source", "Regimen", "Effect", "Interpretation"],
+ "rows": [
+  {"key": "martineau2017vitamin", "cells": ["@martineau2017vitamin", "daily or weekly, no bolus", {"value": "OR 0.81 (0.72–0.91)", "quote": "adjusted odds ratio 0.81, 0.72 to 0.91"}, "protective"]},
+  {"key": "martineau2017vitamin", "cells": ["@martineau2017vitamin", "≥1 bolus dose", {"value": "OR 0.97 (0.86–1.10)", "quote": "adjusted odds ratio 0.97, 0.86 to 1.10"}, "no effect"]},
+  {"key": "bergman2013vitamin", "cells": ["@bergman2013vitamin", "once-daily vs bolus", "OR 0.51 vs 0.86", "daily larger effect"]}
+ ],
+ "notes": ["Effects as reported by each meta-analysis; not pooled."]}

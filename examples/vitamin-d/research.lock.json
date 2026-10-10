@@ -1,0 +1,767 @@
+{
+ "tool": "factual-research 0.4.0",
+ "written": "2026-10-06T13:56:05",
+ "question": "Does vitamin D supplementation reduce the risk of acute respiratory infections?",
+ "packs": [
+  "medicine"
+ ],
+ "since": 2005,
+ "criteria": {
+  "include": [
+   "RCTs or systematic reviews/meta-analyses of RCTs",
+   "humans",
+   "outcome = ARI incidence"
+  ],
+  "exclude": [
+   "animal or in vitro studies",
+   "treatment of existing infection only (e.g. COVID-19 inpatients)",
+   "no ARI outcome"
+  ],
+  "languages": [
+   "en",
+   "pl"
+  ]
+ },
+ "subquestions": [
+  {
+   "id": "SQ1",
+   "text": "Does vitamin D supplementation reduce the risk of acute respiratory infection compared with placebo?"
+  },
+  {
+   "id": "SQ2",
+   "text": "Does the effect depend on dosing regimen (daily vs bolus) or baseline vitamin D status?"
+  }
+ ],
+ "queries": [
+  {
+   "run": "2026-10-06T03:34:24",
+   "subq": "SQ1",
+   "connector": "clinicaltrials",
+   "query": "vitamin D supplementation acute respiratory infection prevention randomized",
+   "params": {
+    "limit": 40,
+    "since": 2005
+   },
+   "date": "2026-10-06T03:34:25",
+   "total": 12,
+   "returned": 12
+  },
+  {
+   "run": "2026-10-06T03:34:24",
+   "subq": "SQ1",
+   "connector": "europepmc",
+   "query": "vitamin D supplementation acute respiratory infection prevention randomized",
+   "params": {
+    "limit": 40,
+    "since": 2005
+   },
+   "date": "2026-10-06T03:34:25",
+   "total": 5534,
+   "returned": 40
+  },
+  {
+   "run": "2026-10-06T03:34:24",
+   "subq": "SQ1",
+   "connector": "crossref",
+   "query": "vitamin D supplementation acute respiratory infection prevention randomized",
+   "params": {
+    "limit": 40,
+    "since": 2005
+   },
+   "date": "2026-10-06T03:34:26",
+   "total": 2512747,
+   "returned": 40
+  },
+  {
+   "run": "2026-10-06T03:34:24",
+   "subq": "SQ1",
+   "connector": "pubmed",
+   "query": "((\"Vitamin D\"[MeSH] OR \"vitamin D\"[tiab] OR cholecalciferol[tiab]) AND (\"Respiratory Tract Infections\"[MeSH] OR \"acute respiratory infection*\"[tiab]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic review[pt])) AND (systematic[sb] OR meta-analysis[pt] OR randomized controlled trial[pt] OR practice guideline[pt] OR guideline[pt])",
+   "params": {
+    "limit": 40,
+    "since": 2005
+   },
+   "date": "2026-10-06T03:34:26",
+   "total": 334,
+   "returned": 40
+  },
+  {
+   "run": "2026-10-06T03:34:24",
+   "subq": "SQ1",
+   "connector": "openalex",
+   "query": "vitamin D supplementation acute respiratory infection prevention randomized",
+   "params": {
+    "limit": 40,
+    "since": 2005
+   },
+   "date": "2026-10-06T03:34:26",
+   "total": 30428,
+   "returned": 40
+  },
+  {
+   "run": "2026-10-06T03:34:24",
+   "subq": "SQ1",
+   "connector": "pubmed",
+   "query": "(\"Vitamin D\"[MeSH] OR \"vitamin D\"[tiab] OR cholecalciferol[tiab]) AND (\"Respiratory Tract Infections\"[MeSH] OR \"acute respiratory infection*\"[tiab]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic review[pt])",
+   "params": {
+    "limit": 40,
+    "since": 2005
+   },
+   "date": "2026-10-06T03:34:26",
+   "total": 334,
+   "returned": 40
+  },
+  {
+   "run": "2026-10-06T03:34:24",
+   "subq": "SQ2",
+   "connector": "clinicaltrials",
+   "query": "vitamin D daily versus bolus dosing respiratory infection baseline 25-hydroxyvitamin D",
+   "params": {
+    "limit": 40,
+    "since": 2005
+   },
+   "date": "2026-10-06T03:34:27",
+   "total": 0,
+   "returned": 0
+  },
+  {
+   "run": "2026-10-06T03:34:24",
+   "subq": "SQ2",
+   "connector": "europepmc",
+   "query": "vitamin D daily versus bolus dosing respiratory infection baseline 25-hydroxyvitamin D",
+   "params": {
+    "limit": 40,
+    "since": 2005
+   },
+   "date": "2026-10-06T03:34:27",
+   "total": 347,
+   "returned": 40
+  },
+  {
+   "run": "2026-10-06T03:34:24",
+   "subq": "SQ2",
+   "connector": "crossref",
+   "query": "vitamin D daily versus bolus dosing respiratory infection baseline 25-hydroxyvitamin D",
+   "params": {
+    "limit": 40,
+    "since": 2005
+   },
+   "date": "2026-10-06T03:34:27",
+   "total": 68547,
+   "returned": 40
+  },
+  {
+   "run": "2026-10-06T03:34:24",
+   "subq": "SQ2",
+   "connector": "pubmed",
+   "query": "((\"vitamin D\"[tiab]) AND (\"respiratory tract infections\"[MeSH] OR \"respiratory infection*\"[tiab]) AND (bolus[tiab] OR daily[tiab] OR \"baseline\"[tiab]) AND (meta-analysis[pt] OR randomized controlled trial[pt])) AND (systematic[sb] OR meta-analysis[pt] OR randomized controlled trial[pt] OR practice guideline[pt] OR guideline[pt])",
+   "params": {
+    "limit": 40,
+    "since": 2005
+   },
+   "date": "2026-10-06T03:34:28",
+   "total": 107,
+   "returned": 40
+  },
+  {
+   "run": "2026-10-06T03:34:24",
+   "subq": "SQ2",
+   "connector": "openalex",
+   "query": "vitamin D daily versus bolus dosing respiratory infection baseline 25-hydroxyvitamin D",
+   "params": {
+    "limit": 40,
+    "since": 2005
+   },
+   "date": "2026-10-06T03:34:28",
+   "total": 682,
+   "returned": 40
+  },
+  {
+   "run": "2026-10-06T03:34:24",
+   "subq": "SQ2",
+   "connector": "pubmed",
+   "query": "(\"vitamin D\"[tiab]) AND (\"respiratory tract infections\"[MeSH] OR \"respiratory infection*\"[tiab]) AND (bolus[tiab] OR daily[tiab] OR \"baseline\"[tiab]) AND (meta-analysis[pt] OR randomized controlled trial[pt])",
+   "params": {
+    "limit": 40,
+    "since": 2005
+   },
+   "date": "2026-10-06T03:34:30",
+   "total": 107,
+   "returned": 40
+  },
+  {
+   "run": "watch",
+   "subq": "SQ1",
+   "connector": "clinicaltrials",
+   "query": "vitamin D supplementation acute respiratory infection prevention randomized",
+   "params": {
+    "limit": 60,
+    "since": 2005
+   },
+   "date": "2026-10-06T03:54:27",
+   "total": 12,
+   "returned": 12
+  },
+  {
+   "run": "watch",
+   "subq": "SQ1",
+   "connector": "crossref",
+   "query": "vitamin D supplementation acute respiratory infection prevention randomized",
+   "params": {
+    "limit": 60,
+    "since": 2005
+   },
+   "date": "2026-10-06T03:54:28",
+   "total": 2512753,
+   "returned": 60
+  },
+  {
+   "run": "watch",
+   "subq": "SQ1",
+   "connector": "europepmc",
+   "query": "vitamin D supplementation acute respiratory infection prevention randomized",
+   "params": {
+    "limit": 60,
+    "since": 2005
+   },
+   "date": "2026-10-06T03:54:28",
+   "total": 5534,
+   "returned": 60
+  },
+  {
+   "run": "watch",
+   "subq": "SQ2",
+   "connector": "europepmc",
+   "query": "vitamin D daily versus bolus dosing respiratory infection baseline 25-hydroxyvitamin D",
+   "params": {
+    "limit": 60,
+    "since": 2005
+   },
+   "date": "2026-10-06T03:54:29",
+   "total": 347,
+   "returned": 60
+  },
+  {
+   "run": "watch",
+   "subq": "SQ1",
+   "connector": "openalex",
+   "query": "vitamin D supplementation acute respiratory infection prevention randomized",
+   "params": {
+    "limit": 60,
+    "since": 2005
+   },
+   "date": "2026-10-06T03:54:29",
+   "total": 30428,
+   "returned": 60
+  },
+  {
+   "run": "watch",
+   "subq": "SQ1",
+   "connector": "pubmed",
+   "query": "(\"Vitamin D\"[MeSH] OR \"vitamin D\"[tiab] OR cholecalciferol[tiab]) AND (\"Respiratory Tract Infections\"[MeSH] OR \"acute respiratory infection*\"[tiab]) AND (randomized controlled trial[pt] OR meta-analysis[pt] OR systematic review[pt])",
+   "params": {
+    "limit": 60,
+    "since": 2005
+   },
+   "date": "2026-10-06T03:54:29",
+   "total": 334,
+   "returned": 60
+  },
+  {
+   "run": "watch",
+   "subq": "SQ2",
+   "connector": "clinicaltrials",
+   "query": "vitamin D daily versus bolus dosing respiratory infection baseline 25-hydroxyvitamin D",
+   "params": {
+    "limit": 60,
+    "since": 2005
+   },
+   "date": "2026-10-06T03:54:29",
+   "total": 0,
+   "returned": 0
+  },
+  {
+   "run": "watch",
+   "subq": "SQ2",
+   "connector": "openalex",
+   "query": "vitamin D daily versus bolus dosing respiratory infection baseline 25-hydroxyvitamin D",
+   "params": {
+    "limit": 60,
+    "since": 2005
+   },
+   "date": "2026-10-06T03:54:30",
+   "total": 682,
+   "returned": 60
+  },
+  {
+   "run": "watch",
+   "subq": "SQ2",
+   "connector": "crossref",
+   "query": "vitamin D daily versus bolus dosing respiratory infection baseline 25-hydroxyvitamin D",
+   "params": {
+    "limit": 60,
+    "since": 2005
+   },
+   "date": "2026-10-06T03:54:30",
+   "total": 68547,
+   "returned": 60
+  },
+  {
+   "run": "watch",
+   "subq": "SQ2",
+   "connector": "pubmed",
+   "query": "(\"vitamin D\"[tiab]) AND (\"respiratory tract infections\"[MeSH] OR \"respiratory infection*\"[tiab]) AND (bolus[tiab] OR daily[tiab] OR \"baseline\"[tiab]) AND (meta-analysis[pt] OR randomized controlled trial[pt])",
+   "params": {
+    "limit": 60,
+    "since": 2005
+   },
+   "date": "2026-10-06T03:54:31",
+   "total": 107,
+   "returned": 60
+  }
+ ],
+ "included": [
+  {
+   "key": "wang2025role",
+   "status": "ta_included",
+   "doi": "10.1186/s12887-025-06361-6",
+   "pmid": "41387808",
+   "arxiv": null,
+   "title": "The role of vitamin D in the prevention and treatment of acute respiratory infections in pediatric populations: a systematic review and meta-analysis of randomized controlled trials",
+   "year": 2025,
+   "design": "sr_ma"
+  },
+  {
+   "key": "pediatrics2012randomized",
+   "status": "ta_included",
+   "doi": "10.1542/peds.2011-3029d",
+   "pmid": "22908115",
+   "arxiv": null,
+   "title": "Randomized Trial of Vitamin D Supplementation and Risk of Acute Respiratory Infection in Mongolia",
+   "year": 2012,
+   "design": "rct"
+  },
+  {
+   "key": "laaksi2010vitamin",
+   "status": "ta_included",
+   "doi": "10.1086/654881",
+   "pmid": "20632889",
+   "arxiv": null,
+   "title": "Vitamin D Supplementation for the Prevention of Acute Respiratory Tract Infection: A Randomized, Double‐Blinded Trial among Young Finnish Men",
+   "year": 2010,
+   "design": "rct"
+  },
+  {
+   "key": "cho2022efficacy",
+   "status": "ta_included",
+   "doi": "10.3390/nu14040818",
+   "pmid": "35215468",
+   "arxiv": null,
+   "title": "Efficacy of Vitamin D Supplements in Prevention of Acute Respiratory Infection: A Meta-Analysis for Randomized Controlled Trials",
+   "year": 2022,
+   "design": "sr_ma"
+  },
+  {
+   "key": "jia2024vitamin",
+   "status": "ta_included",
+   "doi": "10.1371/journal.pone.0303495",
+   "pmid": "38787821",
+   "arxiv": null,
+   "title": "Vitamin D supplementation for prevention of acute respiratory infections in older adults: A systematic review and meta-analysis",
+   "year": 2024,
+   "design": "sr_ma"
+  },
+  {
+   "key": "fang2023meta",
+   "status": "ta_included",
+   "doi": "10.3389/fnut.2023.1188958",
+   "pmid": "37408991",
+   "arxiv": null,
+   "title": "A meta-analysis of the association between vitamin D supplementation and the risk of acute respiratory tract infection in the healthy pediatric group",
+   "year": 2023,
+   "design": "sr_ma"
+  },
+  {
+   "key": "martineau2017vitamin",
+   "status": "ta_included",
+   "doi": "10.1136/bmj.i6583",
+   "pmid": "28202713",
+   "arxiv": null,
+   "title": "Vitamin D supplementation to prevent acute respiratory tract infections: systematic review and meta-analysis of individual participant data",
+   "year": 2017,
+   "design": "sr_ma"
+  },
+  {
+   "key": "jolliffe2025vitamin",
+   "status": "ta_included",
+   "doi": "10.1016/S2213-8587(24)00348-6",
+   "pmid": "39993397",
+   "arxiv": null,
+   "title": "Vitamin D supplementation to prevent acute respiratory infections: systematic review and meta-analysis of stratified aggregate data",
+   "year": 2025,
+   "design": "sr_ma"
+  },
+  {
+   "key": "jolliffe2021vitamin",
+   "status": "ta_included",
+   "doi": "10.1016/S2213-8587(21)00051-6",
+   "pmid": "33798465",
+   "arxiv": null,
+   "title": "Vitamin D supplementation to prevent acute respiratory infections: a systematic review and meta-analysis of aggregate data from randomised controlled trials",
+   "year": 2021,
+   "design": "sr_ma"
+  },
+  {
+   "key": "camargo2024daily",
+   "status": "ta_included",
+   "doi": "10.1093/cid/ciad770",
+   "pmid": "38113446",
+   "arxiv": null,
+   "title": "Effect of Daily Vitamin D Supplementation on Risk of Upper Respiratory Infection in Older Adults: A Randomized Controlled Trial",
+   "year": 2024,
+   "design": "rct"
+  },
+  {
+   "key": "ginde2016high",
+   "status": "ta_included",
+   "doi": "10.1111/jgs.14679",
+   "pmid": "27861708",
+   "arxiv": null,
+   "title": "High‐Dose Monthly Vitamin D for Prevention of Acute Respiratory Infection in Older Long‐Term Care Residents: A Randomized Clinical Trial",
+   "year": 2016,
+   "design": "rct"
+  },
+  {
+   "key": "bergman2013vitamin",
+   "status": "ta_included",
+   "doi": "10.1371/journal.pone.0065835",
+   "pmid": "23840373",
+   "arxiv": null,
+   "title": "Vitamin D and Respiratory Tract Infections: A Systematic Review and Meta-Analysis of Randomized Controlled Trials",
+   "year": 2013,
+   "design": "sr_ma"
+  },
+  {
+   "key": "wallgremstrup2024high",
+   "status": "ta_included",
+   "doi": "10.1186/s12931-023-02642-9",
+   "pmid": "38178229",
+   "arxiv": null,
+   "title": "High-dose vitamin D 3 supplementation shows no beneficial effects on white blood cell counts, acute phase reactants, or frequency of respiratory infections",
+   "year": 2024,
+   "design": "rct"
+  },
+  {
+   "key": "clerico2025vitamin",
+   "status": "ta_included",
+   "doi": "10.1007/s00394-025-03674-1",
+   "pmid": "40310565",
+   "arxiv": null,
+   "title": "Effects of vitamin D supplementation on acute respiratory tract infections in 6-8-year-old children: a randomized clinical trial",
+   "year": 2025,
+   "design": "rct"
+  },
+  {
+   "key": "martineau2015doublea",
+   "status": "ta_included",
+   "doi": "10.1136/thoraxjnl-2015-206996",
+   "pmid": "26063508",
+   "arxiv": null,
+   "title": "Double-blind randomised controlled trial of vitamin D3supplementation for the prevention of acute respiratory infection in older adults and their carers (ViDiFlu)",
+   "year": 2015,
+   "design": "rct"
+  },
+  {
+   "key": "jolliffe2022test",
+   "status": "ta_included",
+   "doi": "10.1136/bmj-2022-071230",
+   "pmid": "36215226",
+   "arxiv": null,
+   "title": "Effect of a test-and-treat approach to vitamin D supplementation on risk of all cause acute respiratory tract infection and covid-19: phase 3 randomised controlled trial (CORONAVIT)",
+   "year": 2022,
+   "design": "rct"
+  }
+ ],
+ "decisions": [
+  {
+   "key": "steurer2017available",
+   "stage": "auto",
+   "decision": "exclude",
+   "reason": "language ger not in criteria",
+   "by": "rule"
+  },
+  {
+   "key": "bula2006geriatrics",
+   "stage": "auto",
+   "decision": "exclude",
+   "reason": "language fre not in criteria",
+   "by": "rule"
+  },
+  {
+   "key": "hazan2024cardiac",
+   "stage": "auto",
+   "decision": "exclude",
+   "reason": "retracted",
+   "by": "rule"
+  },
+  {
+   "key": "anon2020review",
+   "stage": "auto",
+   "decision": "exclude",
+   "reason": "not a research item (peer-review)",
+   "by": "rule"
+  },
+  {
+   "key": "lakkireddy2021impact",
+   "stage": "auto",
+   "decision": "exclude",
+   "reason": "retracted",
+   "by": "rule"
+  },
+  {
+   "key": "martineau2017vitamin",
+   "stage": "ta",
+   "decision": "include",
+   "reason": "meets PICO: vitamin D vs placebo/control, ARI incidence",
+   "by": "agent"
+  },
+  {
+   "key": "jolliffe2021vitamin",
+   "stage": "ta",
+   "decision": "include",
+   "reason": "meets PICO: vitamin D vs placebo/control, ARI incidence",
+   "by": "agent"
+  },
+  {
+   "key": "jolliffe2025vitamin",
+   "stage": "ta",
+   "decision": "include",
+   "reason": "meets PICO: vitamin D vs placebo/control, ARI incidence",
+   "by": "agent"
+  },
+  {
+   "key": "cho2022efficacy",
+   "stage": "ta",
+   "decision": "include",
+   "reason": "meets PICO: vitamin D vs placebo/control, ARI incidence",
+   "by": "agent"
+  },
+  {
+   "key": "jia2024vitamin",
+   "stage": "ta",
+   "decision": "include",
+   "reason": "meets PICO: vitamin D vs placebo/control, ARI incidence",
+   "by": "agent"
+  },
+  {
+   "key": "wang2025role",
+   "stage": "ta",
+   "decision": "include",
+   "reason": "meets PICO: vitamin D vs placebo/control, ARI incidence",
+   "by": "agent"
+  },
+  {
+   "key": "fang2023meta",
+   "stage": "ta",
+   "decision": "include",
+   "reason": "meets PICO: vitamin D vs placebo/control, ARI incidence",
+   "by": "agent"
+  },
+  {
+   "key": "bergman2013vitamin",
+   "stage": "ta",
+   "decision": "include",
+   "reason": "meets PICO: vitamin D vs placebo/control, ARI incidence",
+   "by": "agent"
+  },
+  {
+   "key": "ginde2016high",
+   "stage": "ta",
+   "decision": "include",
+   "reason": "meets PICO: vitamin D vs placebo/control, ARI incidence",
+   "by": "agent"
+  },
+  {
+   "key": "martineau2015doublea",
+   "stage": "ta",
+   "decision": "include",
+   "reason": "meets PICO: vitamin D vs placebo/control, ARI incidence",
+   "by": "agent"
+  },
+  {
+   "key": "laaksi2010vitamin",
+   "stage": "ta",
+   "decision": "include",
+   "reason": "meets PICO: vitamin D vs placebo/control, ARI incidence",
+   "by": "agent"
+  },
+  {
+   "key": "camargo2024daily",
+   "stage": "ta",
+   "decision": "include",
+   "reason": "meets PICO: vitamin D vs placebo/control, ARI incidence",
+   "by": "agent"
+  },
+  {
+   "key": "jolliffe2022test",
+   "stage": "ta",
+   "decision": "include",
+   "reason": "meets PICO: vitamin D vs placebo/control, ARI incidence",
+   "by": "agent"
+  },
+  {
+   "key": "pediatrics2012randomized",
+   "stage": "ta",
+   "decision": "include",
+   "reason": "meets PICO: vitamin D vs placebo/control, ARI incidence",
+   "by": "agent"
+  },
+  {
+   "key": "clerico2025vitamin",
+   "stage": "ta",
+   "decision": "include",
+   "reason": "meets PICO: vitamin D vs placebo/control, ARI incidence",
+   "by": "agent"
+  },
+  {
+   "key": "wallgremstrup2024high",
+   "stage": "ta",
+   "decision": "include",
+   "reason": "meets PICO: vitamin D vs placebo/control, ARI incidence",
+   "by": "agent"
+  },
+  {
+   "key": "ganmaa2020vitamina",
+   "stage": "ta",
+   "decision": "exclude",
+   "reason": "wrong outcome: tuberculosis",
+   "by": "agent"
+  },
+  {
+   "key": "cho2022efficacya",
+   "stage": "ta",
+   "decision": "exclude",
+   "reason": "wrong population: treatment of existing infection",
+   "by": "agent"
+  },
+  {
+   "key": "das2018vitamina",
+   "stage": "ta",
+   "decision": "exclude",
+   "reason": "wrong population: treatment of existing infection",
+   "by": "agent"
+  },
+  {
+   "key": "soe2020vitamin",
+   "stage": "ta",
+   "decision": "exclude",
+   "reason": "wrong outcome: no ARI incidence",
+   "by": "agent"
+  },
+  {
+   "key": "grant2016vitamin",
+   "stage": "ta",
+   "decision": "exclude",
+   "reason": "wrong outcome: no ARI incidence",
+   "by": "agent"
+  },
+  {
+   "key": "patchen2025vitamin",
+   "stage": "ta",
+   "decision": "exclude",
+   "reason": "wrong outcome: no ARI incidence",
+   "by": "agent"
+  },
+  {
+   "key": "roth2010zinc",
+   "stage": "ta",
+   "decision": "exclude",
+   "reason": "wrong intervention: zinc",
+   "by": "agent"
+  },
+  {
+   "key": "khan2023randomized",
+   "stage": "ta",
+   "decision": "exclude",
+   "reason": "wrong intervention: zinc",
+   "by": "agent"
+  },
+  {
+   "key": "malik2014zinc",
+   "stage": "ta",
+   "decision": "exclude",
+   "reason": "wrong intervention: zinc",
+   "by": "agent"
+  },
+  {
+   "key": "thefasebjournal2008meta",
+   "stage": "ta",
+   "decision": "exclude",
+   "reason": "wrong intervention: zinc",
+   "by": "agent"
+  },
+  {
+   "key": "rerksuppaphol2019randomized",
+   "stage": "ta",
+   "decision": "exclude",
+   "reason": "wrong intervention: zinc",
+   "by": "agent"
+  },
+  {
+   "key": "jovic2020could",
+   "stage": "ta",
+   "decision": "exclude",
+   "reason": "wrong focus: COVID-19 narrative",
+   "by": "agent"
+  },
+  {
+   "key": "ali2020role",
+   "stage": "ta",
+   "decision": "exclude",
+   "reason": "wrong focus: COVID-19 narrative",
+   "by": "agent"
+  },
+  {
+   "key": "chile2014randomized",
+   "stage": "ta",
+   "decision": "exclude",
+   "reason": "registration only, no results",
+   "by": "agent"
+  },
+  {
+   "key": "hospital2020cluster",
+   "stage": "ta",
+   "decision": "exclude",
+   "reason": "registration only, no results",
+   "by": "agent"
+  },
+  {
+   "key": "anon2025review",
+   "stage": "auto",
+   "decision": "exclude",
+   "reason": "not a research item (peer-review)",
+   "by": "rule"
+  },
+  {
+   "key": "anon2020decision",
+   "stage": "auto",
+   "decision": "exclude",
+   "reason": "not a research item (peer-review)",
+   "by": "rule"
+  },
+  {
+   "key": "jakobsen2020author",
+   "stage": "auto",
+   "decision": "exclude",
+   "reason": "not a research item (peer-review)",
+   "by": "rule"
+  },
+  {
+   "key": "anon2025reviewa",
+   "stage": "auto",
+   "decision": "exclude",
+   "reason": "not a research item (peer-review)",
+   "by": "rule"
+  }
+ ]
+}
